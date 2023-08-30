@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "SurvivalShooter",
+			"Path": "C:\\Users\\robbi\\OneDrive\\Documents\\Unreal Projects\\SurvivalShooter\\Source\\SurvivalShooter.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SurvivalShooterEditor",
+			"Path": "C:\\Users\\robbi\\OneDrive\\Documents\\Unreal Projects\\SurvivalShooter\\Source\\SurvivalShooterEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

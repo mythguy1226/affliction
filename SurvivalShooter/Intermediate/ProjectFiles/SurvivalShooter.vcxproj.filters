@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\SurvivalShooter.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SurvivalShooter.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SurvivalShooterEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
+    <Filter Include="Source\SurvivalShooter">
+      <UniqueIdentifier>{8792D3FA-5780-3301-837F-697B92F8596B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\SurvivalShooter\AmmoStation.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\AmmoStation.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\BTT_ChasePlayer.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\BTT_ChasePlayer.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\BTT_FindPlayerLocation.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\BTT_FindPlayerLocation.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\BTT_MeleeAttack.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\BTT_MeleeAttack.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\Door.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\Door.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\Enemy.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\Enemy.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SurvivalShooter\EnemyKeys.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\EnemyManager.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\EnemyManager.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\EnemySpawn.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\EnemySpawn.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\Enemy_Controller.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\Enemy_Controller.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\GlobalManager.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\GlobalManager.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\Interactable.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\Interactable.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\IsPlayerInMeleeRange.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\IsPlayerInMeleeRange.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\SurvivalShooter\SurvivalShooter.Build.cs">
+      <Filter>Source\SurvivalShooter</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\SurvivalShooter\SurvivalShooter.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\SurvivalShooter.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\SurvivalShooterCharacter.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\SurvivalShooterCharacter.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\SurvivalShooterGameMode.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\SurvivalShooterGameMode.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\SurvivalShooterProjectile.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\SurvivalShooterProjectile.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\TP_PickUpComponent.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\TP_PickUpComponent.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\TP_WeaponComponent.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\TP_WeaponComponent.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\Weapon.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\Weapon.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalShooter\WeaponShop.cpp">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalShooter\WeaponShop.h">
+      <Filter>Source\SurvivalShooter</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

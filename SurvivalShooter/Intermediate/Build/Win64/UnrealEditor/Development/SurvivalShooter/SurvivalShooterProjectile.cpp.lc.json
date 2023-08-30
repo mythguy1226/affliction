@@ -1,0 +1,23 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\source\\survivalshooter\\survivalshooterprojectile.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\intermediate\\build\\win64\\survivalshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\intermediate\\build\\win64\\unrealeditor\\development\\survivalshooter\\definitions.survivalshooter.h",
+            "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\source\\survivalshooter\\survivalshooterprojectile.h",
+            "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\survivalshooter\\survivalshooterprojectile.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\projectilemovementcomponent.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\movementcomponent.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\movementcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\projectilemovementcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\spherecomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

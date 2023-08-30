@@ -1,0 +1,15 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\source\\survivalshooter\\enemyspawn.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\intermediate\\build\\win64\\survivalshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\intermediate\\build\\win64\\unrealeditor\\development\\survivalshooter\\definitions.survivalshooter.h",
+            "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\source\\survivalshooter\\enemyspawn.h",
+            "c:\\users\\robbi\\onedrive\\documents\\unreal projects\\survivalshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\survivalshooter\\enemyspawn.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

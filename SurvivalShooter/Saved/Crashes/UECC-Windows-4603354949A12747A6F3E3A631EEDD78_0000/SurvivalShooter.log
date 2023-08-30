@@ -1,0 +1,1208 @@
+﻿Log file open, 08/03/23 16:27:19
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogProfilingDebugging: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogWindows: Started CrashReportClient (pid=17852)
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogInit: Display: Running engine for game: SurvivalShooter
+LogCore: UnrealTraceServer: Trace store launch successful
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.0-CL-20979098"
+LogCsvProfiler: Display: Metadata set : engineversion="5.0.3-20979098+++UE5+Release-5.0"
+LogCsvProfiler: Display: Metadata set : commandline="" "C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/SurvivalShooter.uproject" -EpicPortal -epicusername=MythGames -epicuserid=e6af7f8dfe1c4a82bce6009236a67484 -epiclocale=en -epicsandboxid=ue""
+LogCsvProfiler: Display: Metadata set : os="Windows 10 (22H2) [10.0.19045.3208] "
+LogCsvProfiler: Display: Metadata set : cpu="AuthenticAMD|AMD Ryzen 7 5800X 8-Core Processor"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : loginid="9a7f19bd4ebb693a74f2119a929771b5"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogPlatformFile: Not using cached read wrapper
+LogStats: Stats thread started at 0.202890
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: -5:00, Platform Override: ''
+LogInit: Session CrashGUID >====================================================
+         Session CrashGUID >   UECC-Windows-4603354949A12747A6F3E3A631EEDD78
+         Session CrashGUID >====================================================
+LogConfig: Display: Loading Mac ini files took 0.02 seconds
+LogConfig: Display: Loading Android ini files took 0.02 seconds
+LogConfig: Display: Loading HoloLens ini files took 0.02 seconds
+LogConfig: Display: Loading IOS ini files took 0.02 seconds
+LogConfig: Display: Loading VulkanPC ini files took 0.02 seconds
+LogConfig: Display: Loading Unix ini files took 0.03 seconds
+LogConfig: Display: Loading TVOS ini files took 0.03 seconds
+LogConfig: Display: Loading Windows ini files took 0.03 seconds
+LogConfig: Display: Loading LinuxArm64 ini files took 0.04 seconds
+LogConfig: Display: Loading Linux ini files took 0.04 seconds
+LogPluginManager: Mounting Engine plugin Bridge
+LogPluginManager: Mounting Engine plugin FastBuildController
+LogPluginManager: Mounting Engine plugin MeshPainting
+LogPluginManager: Mounting Engine plugin XGEController
+LogPluginManager: Mounting Engine plugin IKRig
+LogPluginManager: Mounting Engine plugin BlendSpaceMotionAnalysis
+LogPluginManager: Mounting Engine plugin ControlRig
+LogPluginManager: Mounting Engine plugin AnimationModifierLibrary
+LogPluginManager: Mounting Engine plugin EnvironmentQueryEditor
+LogPluginManager: Mounting Engine plugin Paper2D
+LogPluginManager: Mounting Engine plugin OodleNetwork
+LogPluginManager: Mounting Engine plugin AISupport
+LogPluginManager: Mounting Engine plugin AssetManagerEditor
+LogPluginManager: Mounting Engine plugin DataValidation
+LogPluginManager: Mounting Engine plugin CryptoKeys
+LogPluginManager: Mounting Engine plugin CurveEditorTools
+LogPluginManager: Mounting Engine plugin ControlRigSpline
+LogPluginManager: Mounting Engine plugin GameplayTagsEditor
+LogPluginManager: Mounting Engine plugin AnimationSharing
+LogPluginManager: Mounting Engine plugin MacGraphicsSwitching
+LogPluginManager: Mounting Engine plugin EditorDebugTools
+LogPluginManager: Mounting Engine plugin MaterialAnalyzer
+LogPluginManager: Mounting Engine plugin EditorScriptingUtilities
+LogPluginManager: Mounting Engine plugin FacialAnimation
+LogPluginManager: Mounting Engine plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting Engine plugin PluginBrowser
+LogPluginManager: Mounting Engine plugin ModelingToolsEditorMode
+LogPluginManager: Mounting Engine plugin SequencerAnimTools
+LogPluginManager: Mounting Engine plugin SpeedTreeImporter
+LogPluginManager: Mounting Engine plugin WorldPartitionHLODUtilities
+LogPluginManager: Mounting Engine plugin GeometryMode
+LogPluginManager: Mounting Engine plugin StylusInput
+LogPluginManager: Mounting Engine plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting Engine plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting Engine plugin CLionSourceCodeAccess
+LogPluginManager: Mounting Engine plugin NullSourceCodeAccess
+LogPluginManager: Mounting Engine plugin PixWinPlugin
+LogPluginManager: Mounting Engine plugin PlasticSourceControl
+LogPluginManager: Mounting Engine plugin PerforceSourceControl
+LogPluginManager: Mounting Engine plugin PluginUtils
+LogPluginManager: Mounting Engine plugin GitSourceControl
+LogPluginManager: Mounting Engine plugin PropertyAccessNode
+LogPluginManager: Mounting Engine plugin SubversionSourceControl
+LogPluginManager: Mounting Engine plugin TraceDataFilters
+LogPluginManager: Mounting Engine plugin RiderSourceCodeAccess
+LogPluginManager: Mounting Engine plugin TextureFormatOodle
+LogPluginManager: Mounting Engine plugin UObjectPlugin
+LogPluginManager: Mounting Engine plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting Engine plugin DatasmithContent
+LogPluginManager: Mounting Engine plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin CameraShakePreviewer
+LogPluginManager: Mounting Engine plugin VariantManagerContent
+LogPluginManager: Mounting Engine plugin Niagara
+LogPluginManager: Mounting Engine plugin GameplayCameras
+LogPluginManager: Mounting Engine plugin BackChannel
+LogPluginManager: Mounting Engine plugin AutomationUtils
+LogPluginManager: Mounting Engine plugin ChaosEditor
+LogPluginManager: Mounting Engine plugin ChaosCloth
+LogPluginManager: Mounting Engine plugin ChaosNiagara
+LogPluginManager: Mounting Engine plugin ChaosClothEditor
+LogPluginManager: Mounting Engine plugin ChaosSolverPlugin
+LogPluginManager: Mounting Engine plugin CharacterAI
+LogPluginManager: Mounting Engine plugin AndroidMedia
+LogPluginManager: Mounting Engine plugin AvfMedia
+LogPluginManager: Mounting Engine plugin ImgMedia
+LogPluginManager: Mounting Engine plugin FullBodyIK
+LogPluginManager: Mounting Engine plugin MediaCompositing
+LogPluginManager: Mounting Engine plugin MediaPlayerEditor
+LogPluginManager: Mounting Engine plugin WebMMedia
+LogPluginManager: Mounting Engine plugin WmfMedia
+LogPluginManager: Mounting Engine plugin AlembicImporter
+LogPluginManager: Mounting Engine plugin GeometryCollectionPlugin
+LogPluginManager: Mounting Engine plugin GeometryFlow
+LogPluginManager: Mounting Engine plugin MeshLODToolset
+LogPluginManager: Mounting Engine plugin MeshModelingToolsetExp
+LogPluginManager: Mounting Engine plugin OpenImageDenoise
+LogPluginManager: Mounting Engine plugin PlanarCut
+LogPluginManager: Mounting Engine plugin ProxyLODPlugin
+LogPluginManager: Mounting Engine plugin PythonScriptPlugin
+LogPluginManager: Mounting Engine plugin PlatformCrypto
+LogPluginManager: Mounting Engine plugin TcpMessaging
+LogPluginManager: Mounting Engine plugin ActorSequence
+LogPluginManager: Mounting Engine plugin UdpMessaging
+LogPluginManager: Mounting Engine plugin LevelSequenceEditor
+LogPluginManager: Mounting Engine plugin MatineeToLevelSequence
+LogPluginManager: Mounting Engine plugin SkeletalReduction
+LogPluginManager: Mounting Engine plugin SequencerScripting
+LogPluginManager: Mounting Engine plugin TemplateSequence
+LogPluginManager: Mounting Engine plugin LauncherChunkInstaller
+LogPluginManager: Mounting Engine plugin OnlineBase
+LogPluginManager: Mounting Engine plugin OnlineSubsystem
+LogPluginManager: Mounting Engine plugin OnlineSubsystemNull
+LogPluginManager: Mounting Engine plugin OnlineSubsystemUtils
+LogPluginManager: Mounting Engine plugin ActorLayerUtilities
+LogPluginManager: Mounting Engine plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin AndroidFileServer
+LogPluginManager: Mounting Engine plugin AndroidMoviePlayer
+LogPluginManager: Mounting Engine plugin AndroidPermission
+LogPluginManager: Mounting Engine plugin AppleImageUtils
+LogPluginManager: Mounting Engine plugin AppleMoviePlayer
+LogPluginManager: Mounting Engine plugin ArchVisCharacter
+LogPluginManager: Mounting Engine plugin AssetTags
+LogPluginManager: Mounting Engine plugin AudioCapture
+LogPluginManager: Mounting Engine plugin AudioSynesthesia
+LogPluginManager: Mounting Engine plugin CableComponent
+LogPluginManager: Mounting Engine plugin CustomMeshComponent
+LogPluginManager: Mounting Engine plugin ChunkDownloader
+LogPluginManager: Mounting Engine plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin GeometryCache
+LogPluginManager: Mounting Engine plugin GoogleCloudMessaging
+LogPluginManager: Mounting Engine plugin GooglePAD
+LogPluginManager: Mounting Engine plugin GeometryProcessing
+LogPluginManager: Mounting Engine plugin HairStrands
+LogPluginManager: Mounting Engine plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LocationServicesBPLibrary
+LogPluginManager: Mounting Engine plugin MeshModelingToolset
+LogPluginManager: Mounting Engine plugin MobilePatchingUtils
+LogPluginManager: Mounting Engine plugin ProceduralMeshComponent
+LogPluginManager: Mounting Engine plugin PropertyAccessEditor
+LogPluginManager: Mounting Engine plugin ResonanceAudio
+LogPluginManager: Mounting Engine plugin RuntimePhysXCooking
+LogPluginManager: Mounting Engine plugin SignificanceManager
+LogPluginManager: Mounting Engine plugin SoundFields
+LogPluginManager: Mounting Engine plugin Synthesis
+LogPluginManager: Mounting Engine plugin WebMMoviePlayer
+LogPluginManager: Mounting Engine plugin WindowsDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin WindowsMoviePlayer
+LogPluginManager: Mounting Engine plugin ContentBrowserAssetDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserClassDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserFileDataSource
+LogPluginManager: Mounting Engine plugin Interchange
+LogPluginManager: Mounting Engine plugin InterchangeEditor
+LogPluginManager: Mounting Engine plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting Engine plugin OnlineServices
+LogPluginManager: Mounting Engine plugin OnlineSubsystemIOS
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Bridge/Content/' mounted to '/Bridge/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/IKRig/Content/' mounted to '/IKRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRig/Content/' mounted to '/ControlRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/2D/Paper2D/Content/' mounted to '/Paper2D/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRigSpline/Content/' mounted to '/ControlRigSpline/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Developer/AnimationSharing/Content/' mounted to '/AnimationSharing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/ModelingToolsEditorMode/Content/' mounted to '/ModelingToolsEditorMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/SpeedTreeImporter/Content/' mounted to '/SpeedTreeImporter/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/GeometryMode/Content/' mounted to '/GeometryMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Enterprise/DatasmithContent/Content/' mounted to '/DatasmithContent/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/FX/Niagara/Content/' mounted to '/Niagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosNiagara/Content/' mounted to '/ChaosNiagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosClothEditor/Content/' mounted to '/ChaosClothEditor/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosSolverPlugin/Content/' mounted to '/ChaosSolverPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/FullBodyIK/Content/' mounted to '/FullBodyIK/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Media/MediaCompositing/Content/' mounted to '/MediaCompositing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GeometryCollectionPlugin/Content/' mounted to '/GeometryCollectionPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GeometryFlow/Content/' mounted to '/GeometryFlow/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/MeshLODToolset/Content/' mounted to '/MeshLODToolset/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/MeshModelingToolsetExp/Content/' mounted to '/MeshModelingToolsetExp/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/PythonScriptPlugin/Content/' mounted to '/PythonScriptPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/MovieScene/SequencerScripting/Content/' mounted to '/SequencerScripting/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/AudioSynesthesia/Content/' mounted to '/AudioSynesthesia/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/GeometryProcessing/Content/' mounted to '/GeometryProcessing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/HairStrands/Content/' mounted to '/HairStrands/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/MeshModelingToolset/Content/' mounted to '/MeshModelingToolset/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/ResonanceAudio/Content/' mounted to '/ResonanceAudio/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/Synthesis/Content/' mounted to '/Synthesis/'
+SourceControl: Source control is disabled
+SourceControl: Source control is disabled
+PixWinPlugin: PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: Created online subsystem instance for: NULL
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogInit: Build: ++UE5+Release-5.0-CL-20979098
+LogInit: Engine Version: 5.0.3-20979098+++UE5+Release-5.0
+LogInit: Compatible Engine Version: 5.0.0-19505902+++UE5+Release-5.0
+LogInit: Net CL: 19505902
+LogInit: OS: Windows 10 (22H2) [10.0.19045.3208] (), CPU: AMD Ryzen 7 5800X 8-Core Processor             , GPU: NVIDIA GeForce RTX 3080 Ti
+LogInit: Compiled (64-bit): Jul  7 2022 02:16:06
+LogInit: Compiled with Visual C++: 19.29.30138.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE5+Release-5.0
+LogInit: Command Line:  -EpicPortal -epicusername=MythGames -epicuserid=e6af7f8dfe1c4a82bce6009236a67484 -epiclocale=en -epicsandboxid=ue
+LogInit: Base Directory: C:/Program Files/Epic Games/UE_5.0/Engine/Binaries/Win64/
+LogInit: Allocator: Mimalloc
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 34
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 20
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 59
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 3
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   UE5-Main (697DD581-E64F-41AB-AA4A-51ECBEB7B628): 59
+LogDevObjectVersion:   UE5-Release (D89B5E42-24BD-4D46-8412-ACA8DF641779): 36
+LogDevObjectVersion:   UE5-PrivateFrosty (59DA5D52-1232-4948-B878-597870B8E98B): 8
+LogDevObjectVersion:   UE5-Dev-Cooker (26075A32-730F-4708-88E9-8C32F1599D05): 0
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogDevObjectVersion:   UE5-Dev-LWCRendering (30D58BE3-95EA-4282-A6E3-B159D8EBB06A): 1
+LogInit: Presizing for max 25165824 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+LogConfig: CVar [[con.DebugLateDefault:1]] deferred - dummy variable created
+LogConfig: CVar [[con.DebugLateCheat:1]] deferred - dummy variable created
+LogConfig: CVar [[r.DetectAndWarnOfBadDrivers:0]] deferred - dummy variable created
+LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable created
+LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variable created
+LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
+[2023.08.03-20.27.19:518][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [Engine]
+[2023.08.03-20.27.19:518][  0]LogConfig: CVar [[VisualizeCalibrationColorMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationColor.PPM_DefaultCalibrationColor]] deferred - dummy variable created
+[2023.08.03-20.27.19:518][  0]LogConfig: CVar [[VisualizeCalibrationGrayscaleMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationGrayscale.PPM_DefaultCalibrationGrayscale]] deferred - dummy variable created
+[2023.08.03-20.27.19:518][  0]LogConfig: CVar [[MaxSkinBones:(Default=65536,PerPlatform=(("Mobile", 256)))]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [Engine]
+[2023.08.03-20.27.19:519][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [Engine]
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[s.MaxPackageSummarySize:16384]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__SoundBase]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__MaterialInterface]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__DeviceProfileManager]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [Engine]
+[2023.08.03-20.27.19:519][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [Engine]
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Average",ToolTip="Simulates average internet conditions")]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Bad",ToolTip="Simulates laggy internet conditions")]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [Engine]
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[DefaultPVRTCQuality:1]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[DefaultASTCQualityBySpeed:1]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[DefaultASTCQualityBySize:3]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:WidgetBlueprint]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GroupActor]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MetaData]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ObjectRedirector]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NavMeshRenderingComponent]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ReflectionCaptureComponent]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:TextRenderComponent]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:Font]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:InterpCurveEdSetup]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MaterialExpression]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MatineeActorCameraAnim]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraEmitter]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraScript]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleEmitter]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleLODLevel]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleModule]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SubUVAnimation]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SoundNode]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GameplayEffectUIData]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:WidgetBlueprint]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:GroupActor]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:MetaData]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:ObjectRedirector]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:InterpCurveEdSetup]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:MatineeActorCameraAnim]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.AllowStaticLighting]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.GBuffer]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.VelocityOutputPass]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.SelectiveBasePassOutputs]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.DBuffer]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.Symbols]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.GenerateSymbols]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.WriteSymbols]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.AllowUniqueSymbols]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.ExtraData]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.Optimize]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.CompileShadersForDevelopment]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.MobileHDR]] deferred - dummy variable created
+[2023.08.03-20.27.19:519][  0]LogConfig: CVar [[VersionedIntRValues:r.UsePreExposure]] deferred - dummy variable created
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [GlobalIlluminationQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [ReflectionQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [Scalability]
+[2023.08.03-20.27.19:520][  0]LogConfig: CVar [[r.HairStrands.Interpolation.UseSingleGuide:0]] deferred - dummy variable created
+[2023.08.03-20.27.19:529][  0]LogD3D12RHI: Aftermath initialized
+[2023.08.03-20.27.19:529][  0]LogD3D12RHI: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+[2023.08.03-20.27.19:671][  0]LogD3D12RHI: Found D3D12 adapter 0: NVIDIA GeForce RTX 3080 Ti (Max supported Feature Level 12_1, shader model 6.6)
+[2023.08.03-20.27.19:671][  0]LogD3D12RHI: Adapter has 12100MB of dedicated video memory, 0MB of dedicated system memory, and 16346MB of shared system memory, 1 output[s]
+[2023.08.03-20.27.19:674][  0]LogD3D12RHI: Found D3D12 adapter 1: Microsoft Basic Render Driver (Max supported Feature Level 12_1, shader model 6.2)
+[2023.08.03-20.27.19:674][  0]LogD3D12RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 16346MB of shared system memory, 0 output[s]
+[2023.08.03-20.27.19:674][  0]LogD3D12RHI: Chosen D3D12 Adapter Id = 0
+[2023.08.03-20.27.19:674][  0]LogInit: Selected Device Profile: [WindowsEditor]
+[2023.08.03-20.27.19:674][  0]LogDeviceProfileManager: Applying CVar settings loaded from the selected device profile: [WindowsEditor]
+[2023.08.03-20.27.19:674][  0]LogHAL: Display: Platform has ~ 32 GB [34281353216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2023.08.03-20.27.19:674][  0]LogDeviceProfileManager: Going up to parent DeviceProfile [Windows]
+[2023.08.03-20.27.19:674][  0]LogDeviceProfileManager: Going up to parent DeviceProfile []
+[2023.08.03-20.27.19:674][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2023.08.03-20.27.19:675][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [Engine]
+[2023.08.03-20.27.19:675][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/Config/WindowsEditor/Editor.ini]
+[2023.08.03-20.27.19:675][  0]LogInit: Computer: DESKTOP-OO23Q20
+[2023.08.03-20.27.19:675][  0]LogInit: User: robbi
+[2023.08.03-20.27.19:675][  0]LogInit: CPU Page size=4096, Cores=8
+[2023.08.03-20.27.19:675][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2023.08.03-20.27.19:675][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
+[2023.08.03-20.27.19:675][  0]LogMemory: Platform Memory Stats for WindowsEditor
+[2023.08.03-20.27.19:675][  0]LogMemory: Process Physical Memory: 284.00 MB used, 295.28 MB peak
+[2023.08.03-20.27.19:675][  0]LogMemory: Process Virtual Memory: 260.37 MB used, 263.87 MB peak
+[2023.08.03-20.27.19:675][  0]LogMemory: Physical Memory: 12849.21 MB used,  19844.04 MB free, 32693.25 MB total
+[2023.08.03-20.27.19:675][  0]LogMemory: Virtual Memory: 18500.04 MB used,  19057.21 MB free, 37557.25 MB total
+[2023.08.03-20.27.19:675][  0]LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+[2023.08.03-20.27.19:678][  0]LogWindows: WindowsPlatformFeatures enabled
+[2023.08.03-20.27.19:687][  0]LogInit: Physics initialised using underlying interface: Chaos
+[2023.08.03-20.27.19:687][  0]LogInit: Using OS detected language (en-US).
+[2023.08.03-20.27.19:687][  0]LogInit: Using OS detected locale (en-US).
+[2023.08.03-20.27.19:690][  0]LogTextLocalizationManager: No specific localization for 'en-US' exists, so 'en' will be used for the language.
+[2023.08.03-20.27.19:783][  0]LogInit: Setting process to per monitor DPI aware
+[2023.08.03-20.27.19:790][  0]LogWindowsTextInputMethodSystem: Available input methods:
+[2023.08.03-20.27.19:790][  0]LogWindowsTextInputMethodSystem:   - English (United States) - (Keyboard).
+[2023.08.03-20.27.19:790][  0]LogWindowsTextInputMethodSystem: Activated input method: English (United States) - (Keyboard).
+[2023.08.03-20.27.19:799][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2023.08.03-20.27.19:799][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2023.08.03-20.27.19:891][  0]LogD3D12RHI: InitD3DDevice: -D3DDebug = off -D3D12GPUValidation = off
+[2023.08.03-20.27.19:893][  0]LogD3D12RHI: [Aftermath] Aftermath crash dumping enabled
+[2023.08.03-20.27.19:893][  0]LogD3D12RHI: Emitting draw events for PIX profiling.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: [Aftermath] Aftermath enabled and primed
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: [Aftermath] Aftermath resource tracking enabled
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: ID3D12Device1 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: ID3D12Device2 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: ID3D12Device3 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: ID3D12Device4 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: ID3D12Device5 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: ID3D12Device6 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: ID3D12Device7 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: D3D12 ray tracing tier 1.0 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: D3D12 ray tracing tier 1.1 is supported.
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported
+[2023.08.03-20.27.19:971][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported
+[2023.08.03-20.27.19:997][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for 3D Queue 0
+[2023.08.03-20.27.20:002][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for Copy Queue 0
+[2023.08.03-20.27.20:013][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for Compute Queue 0
+[2023.08.03-20.27.20:029][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2023.08.03-20.27.20:029][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2023.08.03-20.27.20:048][  0]LogD3D12RHI:     GPU DeviceId: 0x2208 (for the marketing name, search the web for "GPU Device Id")
+[2023.08.03-20.27.20:048][  0]LogWindows: Attached monitors:
+[2023.08.03-20.27.20:048][  0]LogWindows:     resolution: 1920x1080, work area: (0, 0) -> (1920, 1040), device: '\\.\DISPLAY1' [PRIMARY]
+[2023.08.03-20.27.20:048][  0]LogWindows: Found 1 attached monitors.
+[2023.08.03-20.27.20:048][  0]LogWindows: EnumDisplayDevices:
+[2023.08.03-20.27.20:048][  0]LogWindows:    0. 'NVIDIA GeForce RTX 3080 Ti' (P:1 D:1), name: '\\.\DISPLAY1'
+[2023.08.03-20.27.20:048][  0]LogWindows:    1. 'NVIDIA GeForce RTX 3080 Ti' (P:0 D:0), name: '\\.\DISPLAY2'
+[2023.08.03-20.27.20:048][  0]LogWindows:    2. 'NVIDIA GeForce RTX 3080 Ti' (P:0 D:0), name: '\\.\DISPLAY3'
+[2023.08.03-20.27.20:049][  0]LogWindows:    3. 'NVIDIA GeForce RTX 3080 Ti' (P:0 D:0), name: '\\.\DISPLAY4'
+[2023.08.03-20.27.20:049][  0]LogWindows: DebugString: FoundDriverCount:4 
+[2023.08.03-20.27.20:049][  0]LogD3D12RHI:     Adapter Name: NVIDIA GeForce RTX 3080 Ti
+[2023.08.03-20.27.20:049][  0]LogD3D12RHI:   Driver Version: 535.98 (internal:31.0.15.3598, unified:535.98)
+[2023.08.03-20.27.20:049][  0]LogD3D12RHI:      Driver Date: 5-24-2023
+[2023.08.03-20.27.20:049][  0]LogRHI: Texture pool is 7139 MB (70% of 10198 MB)
+[2023.08.03-20.27.20:049][  0]LogD3D12RHI: Async texture creation enabled
+[2023.08.03-20.27.20:049][  0]LogD3D12RHI: RHI has support for 64 bit atomics
+[2023.08.03-20.27.20:056][  0]LogRHI: GeForceNow SDK initialized: 0
+[2023.08.03-20.27.20:060][  0]LogTurnkeySupport: Running Turnkey SDK detection: ' -ScriptsForProject="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/SurvivalShooter.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Intermediate/TurnkeyReport_0.log" -log="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Intermediate/TurnkeyLog_0.log" -project="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/SurvivalShooter.uproject"  -platform=all'
+[2023.08.03-20.27.20:060][  0]LogMonitoredProcess: Running Serialized UAT: [ cmd.exe /c ""C:/Program Files/Epic Games/UE_5.0/Engine/Build/BatchFiles/RunUAT.bat"  -ScriptsForProject="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/SurvivalShooter.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Intermediate/TurnkeyReport_0.log" -log="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Intermediate/TurnkeyLog_0.log" -project="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/SurvivalShooter.uproject"  -platform=all" ]
+[2023.08.03-20.27.20:075][  0]LogTextureFormatETC2: Display: ETC2 Texture loading DLL: TextureConverter.dll
+[2023.08.03-20.27.20:079][  0]LogTextureFormatOodle: Display: Oodle Texture TFO init; latest sdk version = 2.9.5
+[2023.08.03-20.27.20:079][  0]LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.5.dll
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2023.08.03-20.27.20:084][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2023.08.03-20.27.20:097][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLens'
+[2023.08.03-20.27.20:097][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLensClient'
+[2023.08.03-20.27.20:099][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2023.08.03-20.27.20:099][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2023.08.03-20.27.20:101][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2023.08.03-20.27.20:101][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxEditor'
+[2023.08.03-20.27.20:101][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2023.08.03-20.27.20:101][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2023.08.03-20.27.20:103][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64'
+[2023.08.03-20.27.20:103][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Server'
+[2023.08.03-20.27.20:103][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Client'
+[2023.08.03-20.27.20:104][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2023.08.03-20.27.20:104][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2023.08.03-20.27.20:108][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2023.08.03-20.27.20:108][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsEditor'
+[2023.08.03-20.27.20:108][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2023.08.03-20.27.20:108][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2023.08.03-20.27.20:108][  0]LogTargetPlatformManager: Display: Building Assets For WindowsEditor
+[2023.08.03-20.27.20:112][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2023.08.03-20.27.20:113][  0]LogTargetPlatformManager: Unable to find audio format BINKA from hinted modules, loading all potential format modules to find it
+[2023.08.03-20.27.20:113][  0]LogTargetPlatformManager: Loaded format module AudioFormatADPCM
+[2023.08.03-20.27.20:113][  0]LogTargetPlatformManager:   ADPCM
+[2023.08.03-20.27.20:113][  0]LogTargetPlatformManager:   PCM
+[2023.08.03-20.27.20:115][  0]LogTargetPlatformManager: Loaded format module AudioFormatBink
+[2023.08.03-20.27.20:115][  0]LogTargetPlatformManager:   BINKA
+[2023.08.03-20.27.20:115][  0]LogTargetPlatformManager: Loaded format module AudioFormatOgg
+[2023.08.03-20.27.20:115][  0]LogTargetPlatformManager:   OGG
+[2023.08.03-20.27.20:115][  0]LogTargetPlatformManager: Loaded format module AudioFormatOpus
+[2023.08.03-20.27.20:115][  0]LogTargetPlatformManager:   OPUS
+[2023.08.03-20.27.20:140][  0]LogTargetPlatformManager: Unable to find shader format SF_METAL from hinted modules, loading all potential format modules to find it
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager: Loaded format module MetalShaderFormat
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   SF_METAL
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   SF_METAL_MRT
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   SF_METAL_TVOS
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   SF_METAL_MRT_TVOS
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   SF_METAL_SM5
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   SF_METAL_MACES3_1
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   SF_METAL_MRT_MAC
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager: Loaded format module ShaderFormatD3D
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   PCD3D_SM6
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   PCD3D_SM5
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   PCD3D_ES31
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   D3D_ES3_1_HOLOLENS
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager: Loaded format module ShaderFormatOpenGL
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   GLSL_150_ES31
+[2023.08.03-20.27.20:143][  0]LogTargetPlatformManager:   GLSL_ES3_1_ANDROID
+[2023.08.03-20.27.20:145][  0]LogTargetPlatformManager: Loaded format module ShaderFormatVectorVM
+[2023.08.03-20.27.20:145][  0]LogTargetPlatformManager:   VVM_1_0
+[2023.08.03-20.27.20:145][  0]LogTargetPlatformManager: Loaded format module VulkanShaderFormat
+[2023.08.03-20.27.20:145][  0]LogTargetPlatformManager:   SF_VULKAN_SM5
+[2023.08.03-20.27.20:145][  0]LogTargetPlatformManager:   SF_VULKAN_ES31_ANDROID
+[2023.08.03-20.27.20:145][  0]LogTargetPlatformManager:   SF_VULKAN_ES31
+[2023.08.03-20.27.20:145][  0]LogTargetPlatformManager:   SF_VULKAN_SM5_ANDROID
+[2023.08.03-20.27.20:145][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
+[2023.08.03-20.27.20:145][  0]LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Intermediate/ShaderAutogen/PCD3D_SM5/AutogenShaderHeaders.ush
+[2023.08.03-20.27.20:145][  0]LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+[2023.08.03-20.27.20:145][  0]LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Intermediate/ShaderAutogen/PCD3D_ES31/AutogenShaderHeaders.ush
+[2023.08.03-20.27.20:145][  0]LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+[2023.08.03-20.27.20:147][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2023.08.03-20.27.20:147][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchy Hierarchy.
+[2023.08.03-20.27.20:147][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.08.03-20.27.20:147][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchy Hierarchy.
+[2023.08.03-20.27.20:162][  0]LogDerivedDataCache: Display: ../../../Engine/DerivedDataCache/Compressed.ddp: Opened pak cache for reading. (1230 MiB)
+[2023.08.03-20.27.20:162][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.08.03-20.27.20:162][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchy Hierarchy.
+[2023.08.03-20.27.20:168][  0]LogDerivedDataCache: Speed tests for C:/Users/robbi/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.01 seconds
+[2023.08.03-20.27.20:168][  0]LogDerivedDataCache: Display: Performance to C:/Users/robbi/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.02ms. RandomReadSpeed=1617.97MBs, RandomWriteSpeed=202.54MBs. Assigned SpeedClass 'Local'
+[2023.08.03-20.27.20:169][  0]LogDerivedDataCache: Using Local data cache path C:/Users/robbi/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2023.08.03-20.27.20:169][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2023.08.03-20.27.20:169][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchy Hierarchy.
+[2023.08.03-20.27.20:175][  0]LogVirtualization: VirtualizationSystem name found in ini file: None
+[2023.08.03-20.27.20:175][  0]LogVirtualization: FNullVirtualizationSystem mounted, virtualization will be disabled
+[2023.08.03-20.27.20:175][  0]LogShaderCompilers: Guid format shader working directory is -34 characters bigger than the processId version (../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Intermediate/Shaders/WorkingDirectory/9396/).
+[2023.08.03-20.27.20:175][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/robbi/AppData/Local/Temp/UnrealShaderWorkingDir/87952BEC47975A8BD33614B26FE7BFFA/'.
+[2023.08.03-20.27.20:175][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2023.08.03-20.27.20:175][  0]LogShaderCompilers: Display: Using Local Shader Compiler with 8 workers.
+[2023.08.03-20.27.21:169][  0]LogTurnkeySupport: Completed SDK detection: ExitCode = 0
+[2023.08.03-20.27.21:169][  0]LogSlate: Using FreeType 2.10.0
+[2023.08.03-20.27.21:170][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2023.08.03-20.27.21:194][  0]LogAssetRegistry: FAssetRegistry took 0.0088 seconds to start up
+[2023.08.03-20.27.21:198][  0]LogEditorDomain: Display: EditorDomain is Disabled
+[2023.08.03-20.27.21:331][  0]LogSerialization: UsePackageTrailer: 'false'
+[2023.08.03-20.27.21:331][  0]LogTexture: Display: Texture Encode Speed: FinalIfAvailable (editor).
+[2023.08.03-20.27.21:540][  0]LogInit: Selected Device Profile: [WindowsEditor]
+[2023.08.03-20.27.21:540][  0]LogDeviceProfileManager: Active device profile: [0000052F6EB786C0][0000052F66820000 50] WindowsEditor
+[2023.08.03-20.27.21:540][  0]LogDeviceProfileManager: Profiles: [0000052F6EB78180][0000052F66825000 50] Windows, [0000052F6EB786C0][0000052F66820000 50] WindowsEditor, [0000052F6EB76580][0000052F60F97800 50] WindowsServer, [0000052F6EB74600][0000052F60F1C800 50] WindowsClient, [0000052F6EB73D40][0000052F66822800 50] IOS, [0000052F6EB778C0][0000052F53A4A000 50] iPadAir2, [0000052F6EB78880][0000052F6EE62800 50] IPadPro, [0000052F6EB747C0][0000052F6EE60000 50] iPadAir3, [0000052F6EB76C80][0000052F6EE67800 50] iPadAir4, [0000052F6EB74B40][0000052F6EE6A000 50] iPadMini4, [0000052F6EB75780][0000052F6EE6C800 50] iPadMini5, [0000052F6EB77380][0000052F670AC800 50] iPadMini6, [0000052F6EB7B0C0][0000052F6EE85000 50] iPhone6S, [0000052F6EB7B440][0000052F6EE82800 50] iPhone7, [0000052F6EB7B7C0][0000052F6EE80000 50] iPodTouch7, [0000052F6EB77000][0000052F6EE8A000 50] iPhone6SPlus, [0000052F6EB77A80][0000052F6EE8C800 50] iPhone7Plus, [0000052F6EB77700][0000052F6EE65000 50] iPhoneSE, [0000052F6EB7AF00][0000052F6EE90000 50] iPhone8, [0000052F6EB7B600][0000052F6EE95000 50] iPhone8Plus, [0000052F6EB78C00][0000052F6EE97800 50] iPhoneX, [0000052F6EB7AB80][0000052F6EE9A000 50] iPhoneXS, [0000052F6EB78A40][0000052F6EE9C800 50] iPhoneXSMax, [0000052F6EB7A9C0][0000052F6EE87800 50] iPhoneXR, [0000052F6EB771C0][0000052F6EEA0000 50] iPhone11, [0000052F6EB7A800][0000052F6EEA5000 50] iPhone11Pro, [0000052F6EB7BB40][0000052F6EEA7800 50] iPhone11ProMax, [0000052F6EB75240][0000052F6EEAA000 50] iPhoneSE2, [0000052F6EB763C0][0000052F6EEAC800 50] iPhone12Mini, [0000052F6EB78F80][0000052F6EE92800 50] iPhone12, [0000052F6EB76040][0000052F6EEC0000 50] iPhone12Pro, [0000052F6EB79840][0000052F6EEC5000 50] iPhone12ProMax, [0000052F6EB77540][0000052F6EEC7800 50] iPhone13Mini, [0000052F6EB76E40][0000052F6EECA000 50] iPhone13, [0000052F6EB73480][0000052F6EECC800 50] iPhone13Pro, [0000052F6EB74440][0000052F6EEA2800 50] iPhone13ProMax, [0000052F6EB79680][0000052F6EED0000 50] iPadPro105, [0000052F6EB78DC0][0000052F6EED5000 50] iPadPro129, [0000052F6EB79BC0][0000052F6EED7800 50] iPadPro97, [0000052F6EB77E00][0000052F6EEDA000 50] iPadPro2_129, [0000052F6EB76900][0000052F6EEDC800 50] iPad5, [0000052F6EB77C40][0000052F6EEC2800 50] iPad6, [0000052F6EB76740][0000052F6EEE0000 50] iPad7, [0000052F6EB75940][0000052F6EEE5000 50] iPad8, [0000052F6EB7B980][0000052F6EEE7800 50] iPad9, [0000052F6EB78500][0000052F6EEEA000 50] iPadPro11, [0000052F6EB755C0][0000052F6EEEC800 50] iPadPro2_11, [0000052F6EB7A480][0000052F6EED2800 50] iPadPro3_11, [0000052F6EB740C0][0000052F6EEF0000 50] iPadPro3_129, [0000052F6EB76AC0][0000052F6EEF5000 50] iPadPro4_129, [0000052F6EB79140][0000052F6EEF7800 50] iPadPro5_129, [0000052F6EB79D80][0000052F6EEFA000 50] AppleTV, [0000052F6EB74D00][0000052F6EEFC800 50] AppleTV4K, [0000052F6EB75B00][0000052F6EEE2800 50] TVOS, [0000052F6EB7DAC0][0000052F6EF02800 50] Mac, [0000052F6EB7DE40][0000052F6EF00000 50] MacEditor, [0000052F6EB7D740][0000052F6EF07800 50] MacClient, [0000052F6EB7B280][0000052F6EF0A000 50] MacServer, [0000052F6EB7E000][0000052F6EEF2800 50] Linux, [0000052F6EB7A100][0000052F6EF0C800 50] LinuxEditor, [0000052F6EB73F00][0000052F6EF10000 50] LinuxArm64Editor, [0000052F6EB7E540][0000052F6EF15000 50] LinuxArm64, [0000052F6EB794C0][0000052F6EF17800 50] LinuxClient, [0000052F6EB75080][0000052F6EF1A000 50] LinuxArm64Client, [0000052F6EB7D900][0000052F6EF1C800 50] LinuxServer, [0000052F6EB7E8C0][0000052F6EF05000 50] LinuxArm64Server, [0000052F6EB7CB00][0000052F6EF20000 50] Android, [0000052F6EB7C240][0000052F6EF25000 50] Android_Preview_OpenGL, [0000052F6EB7C780][0000052F6EF27800 50] Android_Preview_Vulkan, [0000052F6EB75CC0][0000052F6EF2A000 50] Android_Low, [0000052F6EB7BEC0][0000052F6EF2C800 50] Android_Mid, [0000052F6EB79A00][0000052F6EF12800 50] Android_High, [0000052F6EB7A640][0000052F6EF30000 50] Android_Default, [0000052F6EB7D3C0][0000052F6EF35000 50] Android_Adreno4xx, [0000052F6EB7CCC0][0000052F6EF37800 50] Android_Adreno5xx_Low, [0000052F6EB75E80][0000052F6EF3A000 50] Android_Adreno5xx, [0000052F6EB7CE80][0000052F6EF3C800 50] Android_Adreno6xx, [0000052F6EB74280][0000052F6EF22800 50] Android_Adreno6xx_Vulkan, [0000052F6EB77FC0][0000052F6EF40000 50] Android_Adreno7xx, [0000052F6EB7C5C0][0000052F6EF45000 50] Android_Adreno7xx_Vulkan, [0000052F6EB73100][0000052F6EF47800 50] Android_Mali_T6xx, [0000052F6EB7DC80][0000052F6EF4A000 50] Android_Mali_T7xx, [0000052F6EB74EC0][0000052F6EF4C800 50] Android_Mali_T8xx, [0000052F6EB7EC40][0000052F6EF32800 50] Android_Mali_G71, [0000052F6EB7EE00][0000052F6EF50000 50] Android_Mali_G72, [0000052F6EB7EFC0][0000052F6EF55000 50] Android_Mali_G72_Vulkan, [0000052F6EB7D580][0000052F6EF57800 50] Android_Mali_G76, [0000052F6EB7F340][0000052F6EF5A000 50] Android_Mali_G76_Vulkan, [0000052F6EB7A2C0][0000052F6EF5C800 50] Android_Mali_G77, [0000052F6EB7F6C0][0000052F6EF42800 50] Android_Mali_G77_Vulkan, [0000052F6EB7E700][0000052F6EF60000 50] Android_Mali_G78, [0000052F6EB7FA40][0000052F6EF65000 50] Android_Mali_G78_Vulkan, [0000052F6EB7BD00][0000052F6EF67800 50] Android_Mali_G710, [0000052F6EB7FDC0][0000052F6EF6A000 50] Android_Mali_G710_Vulkan, [0000052F6EB7E1C0][0000052F6EF6C800 50] Android_Xclipse_920, [0000052F6EF90000][0000052F6EF52800 50] Android_Xclipse_920_Vulkan, [0000052F6EF92300][0000052F6EF70000 50] Android_Vulkan_SM5, [0000052F6EF92840][0000052F6EF75000 50] Android_PowerVR_G6xxx, [0000052F6EF91F80][0000052F6EF77800 50] Android_PowerVR_GT7xxx, [0000052F6EF92BC0][0000052F6EF7A000 50] Android_PowerVR_GE8xxx, [0000052F6EF91C00][0000052F6EF7C800 50] Android_PowerVR_GM9xxx, [0000052F6EF92F40][0000052F6EF62800 50] Android_PowerVR_GM9xxx_Vulkan, [0000052F6EF93100][0000052F6EF80000 50] Android_TegraK1, [0000052F6EF932C0][0000052F6EF85000 50] Android_Unknown_Vulkan, [0000052F6EF91A40][0000052F6EF87800 50] Oculus_Quest, [0000052F6EF93640][0000052F6EF8A000 50] Oculus_Quest2, [0000052F6EF90700][0000052F6EF8C800 50] HoloLens, 
+[2023.08.03-20.27.21:540][  0]LogCsvProfiler: Display: Metadata set : deviceprofile="WindowsEditor"
+[2023.08.03-20.27.21:542][  0]LogTurnkeySupport: Turnkey Platform: Win64: (Status=Valid, Installed=10.0.18362.0, AutoSDK=, MinAllowed=10.0.00000.0, MaxAllowed=10.9.99999.0, Flags="InstalledSdk_ValidVersionExists")
+[2023.08.03-20.27.21:556][  0]LogTexture: Display: Oodle Texture Encode Speed settings: Fast: RDO Off Lambda=0, Effort=Normal Final: RDO Off Lambda=0, Effort=Normal
+[2023.08.03-20.27.21:684][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2023.08.03-20.27.21:684][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+[2023.08.03-20.27.21:684][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2023.08.03-20.27.21:684][  0]LogMeshReduction: No distributed automatic mesh merging module available
+[2023.08.03-20.27.21:684][  0]LogMeshMerging: No distributed automatic mesh merging module available
+[2023.08.03-20.27.21:694][  0]LogNetVersion: SurvivalShooter 1.0.0, NetCL: 19505902, EngineNetVer: 23, GameNetVer: 0 (Checksum: 257624425)
+[2023.08.03-20.27.21:780][  0]LogSlate: Border
+[2023.08.03-20.27.21:780][  0]LogSlate: BreadcrumbButton
+[2023.08.03-20.27.21:780][  0]LogSlate: Default
+[2023.08.03-20.27.21:780][  0]LogSlate: Icons.Save
+[2023.08.03-20.27.21:780][  0]LogSlate: Icons.Toolbar.Settings
+[2023.08.03-20.27.21:780][  0]LogSlate: ListView
+[2023.08.03-20.27.21:780][  0]LogSlate: SoftwareCursor_CardinalCross
+[2023.08.03-20.27.21:780][  0]LogSlate: SoftwareCursor_Grab
+[2023.08.03-20.27.21:780][  0]LogSlate: TableView.DarkRow
+[2023.08.03-20.27.21:780][  0]LogSlate: TableView.Row
+[2023.08.03-20.27.21:780][  0]LogSlate: TreeView
+[2023.08.03-20.27.21:897][  0]SourceControl: Source control is disabled
+[2023.08.03-20.27.21:916][  0]SourceControl: Source control is disabled
+[2023.08.03-20.27.21:916][  0]SourceControl: Source control is disabled
+[2023.08.03-20.27.21:998][  0]LogUObjectArray: 20557 objects as part of root set at end of initial load.
+[2023.08.03-20.27.21:998][  0]LogUObjectAllocator: 5584256 out of 0 bytes used by permanent object pool.
+[2023.08.03-20.27.21:998][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2023.08.03-20.27.22:220][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: 7DF2E5BB49574CD2A8B90884F01A28FB | Instance: EDF93B9B44D03E168AA6D8A059D4D3ED (DESKTOP-OO23Q20-9396).
+[2023.08.03-20.27.22:252][  0]LogPython: Using Python 3.9.7
+[2023.08.03-20.27.22:792][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2023.08.03-20.27.22:798][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2023.08.03-20.27.23:049][  0]SourceControl: Source control is disabled
+[2023.08.03-20.27.23:051][  0]SourceControl: Source control is disabled
+[2023.08.03-20.27.23:053][  0]SourceControl: Source control is disabled
+[2023.08.03-20.27.23:060][  0]LogUProjectInfo: Found projects:
+[2023.08.03-20.27.23:134][  0]LogOpenImageDenoise: OIDN starting up
+[2023.08.03-20.27.23:155][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2023.08.03-20.27.23:168][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.08.03-20.27.23:168][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.08.03-20.27.23:226][  0]LogCollectionManager: Loaded 0 collections in 0.001946 seconds
+[2023.08.03-20.27.23:278][  0]LogFileCache: Scanning file cache for directory 'C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/Collections/' took 0.00s
+[2023.08.03-20.27.23:278][  0]LogFileCache: Scanning file cache for directory 'C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/Developers/robbi/Collections/' took 0.00s
+[2023.08.03-20.27.23:278][  0]LogFileCache: Scanning file cache for directory 'C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/Collections/' took 0.00s
+[2023.08.03-20.27.23:476][  0]LogEngine: Initializing Engine...
+[2023.08.03-20.27.23:485][  0]LogStylusInput: Initializing StylusInput subsystem.
+[2023.08.03-20.27.23:486][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2023.08.03-20.27.23:665][  0]LogInit: Initializing FReadOnlyCVARCache
+[2023.08.03-20.27.23:666][  0]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2023.08.03-20.27.23:673][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.27.23:693][  0]LogAIModule: Creating AISystem for world Untitled
+[2023.08.03-20.27.23:694][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: Audio Device Manager Initialized
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2023.08.03-20.27.23:710][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.08.03-20.27.23:710][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.08.03-20.27.23:710][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.08.03-20.27.23:710][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.08.03-20.27.23:710][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.08.03-20.27.23:710][  0]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2023.08.03-20.27.23:710][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.08.03-20.27.23:710][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.08.03-20.27.23:716][  0]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2023.08.03-20.27.23:773][  0]LogAudioMixer: Display: Using Audio Hardware Device Speakers (Yeti Nano)
+[2023.08.03-20.27.23:774][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.08.03-20.27.23:775][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.08.03-20.27.23:775][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.08.03-20.27.23:775][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=1
+[2023.08.03-20.27.23:775][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=1
+[2023.08.03-20.27.23:776][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=1
+[2023.08.03-20.27.23:776][  0]LogInit: FAudioDevice initialized.
+[2023.08.03-20.27.23:776][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=1
+[2023.08.03-20.27.23:776][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2023.08.03-20.27.23:776][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2023.08.03-20.27.23:776][  0]LogInit: Texture streaming: Enabled
+[2023.08.03-20.27.23:800][  0]LogAnalytics: Display: [UEEditor.Rocket.Release] APIServer = https://datarouter.ol.epicgames.com/. AppVersion = 5.0.3-20979098+++UE5+Release-5.0
+[2023.08.03-20.27.23:806][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2023.08.03-20.27.23:822][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2023.08.03-20.27.23:827][  0]LogLiveCoding: Display: Starting LiveCoding
+[2023.08.03-20.27.23:827][  0]LogLiveCoding: Display: LiveCodingConsole Arguments: SurvivalShooterEditor Win64 Development
+[2023.08.03-20.27.24:479][  0]LogLiveCoding: Display: First instance in process group "UE_SurvivalShooter_0x67297188", spawning console
+[2023.08.03-20.27.24:479][  0]LogLiveCoding: Display: Waiting for server
+[2023.08.03-20.27.24:479][  0]LogLiveCoding: Display: Successfully initialized, removing startup thread
+[2023.08.03-20.27.24:502][  0]LogInit: Transaction tracking system initialized
+[2023.08.03-20.27.24:559][  0]BlueprintLog: New page: Editor Load
+[2023.08.03-20.27.24:699][  0]LocalizationService: Localization service is disabled
+[2023.08.03-20.27.24:735][  0]TimingProfiler: Initialize
+[2023.08.03-20.27.24:735][  0]TimingProfiler: OnSessionChanged
+[2023.08.03-20.27.24:735][  0]LoadingProfiler: Initialize
+[2023.08.03-20.27.24:735][  0]LoadingProfiler: OnSessionChanged
+[2023.08.03-20.27.24:735][  0]NetworkingProfiler: Initialize
+[2023.08.03-20.27.24:735][  0]NetworkingProfiler: OnSessionChanged
+[2023.08.03-20.27.24:735][  0]MemoryProfiler: Initialize
+[2023.08.03-20.27.24:735][  0]MemoryProfiler: OnSessionChanged
+[2023.08.03-20.27.25:231][  0]LogFileCache: Scanning file cache for directory 'C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/' took 0.01s
+[2023.08.03-20.27.25:231][  0]LogLevelSequenceEditor: LevelSequenceEditor subsystem initialized.
+[2023.08.03-20.27.25:293][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2023.08.03-20.27.25:294][  0]SourceControl: Source control is disabled
+[2023.08.03-20.27.25:294][  0]LogUnrealEdMisc: Loading editor; pre map load, took 6.498
+[2023.08.03-20.27.25:294][  0]Cmd: MAP LOAD FILE="../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/FirstPerson/Maps/FirstPersonMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2023.08.03-20.27.25:294][  0]LightingResults: New page: Lighting Build
+[2023.08.03-20.27.25:299][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.27.25:299][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.27.25:299][  0]MapCheck: New page: Map Check
+[2023.08.03-20.27.25:299][  0]LightingResults: New page: Lighting Build
+[2023.08.03-20.27.25:303][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.08.03-20.27.25:306][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.31ms
+[2023.08.03-20.27.25:353][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'FirstPersonMap'.
+[2023.08.03-20.27.25:357][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.27.25:358][  0]LogAIModule: Creating AISystem for world FirstPersonMap
+[2023.08.03-20.27.25:358][  0]LogWorldPartition: Display: WorldPartition initialize started...
+[2023.08.03-20.27.25:358][  0]LogWorldPartition: UWorldPartition::Initialize(IsEditor=1, IsGame=0, IsCooking=0)
+[2023.08.03-20.27.25:454][  0]LogWorldPartition: Display: WorldPartition initialize took 95 ms
+[2023.08.03-20.27.25:457][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.08.03-20.27.25:462][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.29ms
+[2023.08.03-20.27.25:462][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.08.03-20.27.25:463][  0]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0.188ms to complete.
+[2023.08.03-20.27.25:463][  0]LogFileHelpers: Loading map 'FirstPersonMap' took 0.168
+[2023.08.03-20.27.25:472][  0]LogUnrealEdMisc: Total Editor Startup Time, took 6.676
+[2023.08.03-20.27.25:472][  0]LogShaderCompilers: Display: ================================================
+[2023.08.03-20.27.25:472][  0]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.08.03-20.27.25:472][  0]LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2023.08.03-20.27.25:472][  0]LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2023.08.03-20.27.25:472][  0]LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.08.03-20.27.25:472][  0]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2023.08.03-20.27.25:472][  0]LogShaderCompilers: Display: Shaders Compiled: 0
+[2023.08.03-20.27.25:473][  0]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0.00%)
+[2023.08.03-20.27.25:473][  0]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2023.08.03-20.27.25:473][  0]LogShaderCompilers: Display: ================================================
+[2023.08.03-20.27.25:563][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.08.03-20.27.25:567][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.08.03-20.27.25:570][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.08.03-20.27.25:573][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.08.03-20.27.25:615][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/StarterContent.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:615][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:616][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_FirstPerson.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:616][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:616][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_FirstPersonBP.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:616][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:617][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_HandheldARBP.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:617][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:617][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_ThirdPerson.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:617][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:617][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_ThirdPersonBP.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:617][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:618][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_TopDown.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:618][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:618][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_TopDownBP.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:618][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:619][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_VehicleAdvBP.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:619][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:619][  0]LogPakFile: Display: Mounted Pak file 'C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_VirtualRealityBP.upack', mount point: 'root:/'
+[2023.08.03-20.27.25:619][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2023.08.03-20.27.25:619][  0]LogFeaturePack: Error: Error in Feature pack C:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_VirtualRealityBP.upack. Failed to parse manifest: Invalid Json Token. Line: 43 Ch: 4
+[2023.08.03-20.27.25:726][  0]LogSlate: Took 0.000108 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2023.08.03-20.27.25:728][  0]LogSlate: Took 0.000096 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2023.08.03-20.27.25:729][  0]LogSlate: Took 0.000098 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2023.08.03-20.27.25:740][  0]LogViewport: Scene viewport resized to 1530x902, mode Windowed.
+[2023.08.03-20.27.26:235][  0]LogStall: Startup...
+[2023.08.03-20.27.26:236][  0]LogStall: Startup complete.
+[2023.08.03-20.27.26:253][  0]LogLoad: (Engine Initialization) Total time: 7.46 seconds
+[2023.08.03-20.27.26:253][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2023.08.03-20.27.26:284][  0]LogAssetRegistry: Asset discovery search completed in 5.0907 seconds
+[2023.08.03-20.27.26:288][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000002 seconds (updated 0 objects)
+[2023.08.03-20.27.26:288][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2023.08.03-20.27.26:313][  0]LogSlate: Took 0.000058 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2023.08.03-20.27.27:556][107]LogLiveCoding: Display: Starting Live Coding compile.
+[2023.08.03-20.27.29:291][313]LogLiveCoding: Display:    Creating library C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_0.lib and object C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_0.exp
+[2023.08.03-20.27.29:419][316]LogClass: /Script/SurvivalShooter Reload.
+[2023.08.03-20.27.29:420][316]LogClass: SurvivalShooterCharacter Reload.
+[2023.08.03-20.27.29:420][316]LogClass: TP_WeaponComponent Reload.
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class Weapon in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class SurvivalShooterCharacter in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Function HandleOnMontageEnded is new or belongs to a modified class.
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class AmmoStation in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Function OnCapsuleBeginOverlap is new or belongs to a modified class.
+[2023.08.03-20.27.29:420][316]LogClass: Function OnCapsuleEndOverlap is new or belongs to a modified class.
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class BTT_ChasePlayer in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class Enemy in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Function HandleOnMontageEnded is new or belongs to a modified class.
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class BTT_FindPlayerLocation in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class BTT_MeleeAttack in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class EnemyManager in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class Enemy_Controller in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class GlobalManager in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class IsPlayerInMeleeRange in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Could not find existing class TP_WeaponComponent in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:420][316]LogClass: Function AttachWeapon is new or belongs to a modified class.
+[2023.08.03-20.27.29:420][316]LogClass: Function EndPlay is new or belongs to a modified class.
+[2023.08.03-20.27.29:420][316]LogClass: Function Fire is new or belongs to a modified class.
+[2023.08.03-20.27.29:421][316]LogClass: Could not find existing class WeaponShop in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.27.29:421][316]LogClass: Function OnCapsuleBeginOverlap is new or belongs to a modified class.
+[2023.08.03-20.27.29:421][316]LogClass: Function OnCapsuleEndOverlap is new or belongs to a modified class.
+[2023.08.03-20.27.29:428][316]Re-instancing SurvivalShooterCharacter after reload.
+[2023.08.03-20.27.29:437][316]Re-instancing TP_WeaponComponent after reload.
+[2023.08.03-20.27.29:486][316]LogUObjectHash: Compacting FUObjectHashTables data took   0.36ms
+[2023.08.03-20.27.29:532][317]Display: Reload/Re-instancing Complete: 1 package changed, 11 classes new, 2 classes changed, 3 classes unchanged, 1 enum new, 2 functions remapped
+[2023.08.03-20.27.29:532][317]LogLiveCoding: Warning: Live coding succeeded, data type changes may cause packaging to fail if assets reference the new or updated data types
+[2023.08.03-20.27.32:657][472]LogSlate: Took 0.000106 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2023.08.03-20.27.32:660][472]LogSlate: Took 0.000117 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.08.03-20.27.57:640][439]LogEditorClassViewer: Warning: Class /Engine/Tutorial/InWorldBlueprintEditing/TutorialAssets/IWBE_Blutility.IWBE_Blutility_C has parent /Script/Blutility.PlacedEditorUtilityBase, but this parent is not found. The Class will not be shown in ClassViewer.
+[2023.08.03-20.27.57:698][439]LogSlate: Took 0.000095 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2023.08.03-20.28.05:300][280]Running C:/Program Files/Epic Games/UE_5.0/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe  -projectfiles -project="C:/Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/SurvivalShooter.uproject" -game -rocket -progress
+[2023.08.03-20.28.05:505][280]Log file: C:\Users\robbi\AppData\Local\UnrealBuildTool\Log_GPF.txt
+[2023.08.03-20.28.05:607][280]Discovering modules, targets and source code for project...
+[2023.08.03-20.28.06:408][280]Binding IntelliSense data...
+[2023.08.03-20.28.07:912][280]Binding IntelliSense data... 100%
+[2023.08.03-20.28.07:912][280]Writing project files...
+[2023.08.03-20.28.08:817][280]Writing project files... 100%
+[2023.08.03-20.28.08:942][280]LogLiveCoding: Display: Starting Live Coding compile.
+[2023.08.03-20.28.09:026][280]LogSlate: Window 'Add C++ Class' being destroyed
+[2023.08.03-20.28.12:514][628]LogLiveCoding: Display:    Creating library C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_1.lib and object C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_1.exp
+[2023.08.03-20.28.12:592][631]LogClass: /Script/SurvivalShooter Reload.
+[2023.08.03-20.28.12:592][631]LogClass: Could not find existing class Interactable in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.28.12:614][631]LogUObjectHash: Compacting FUObjectHashTables data took   0.36ms
+[2023.08.03-20.28.12:623][632]Display: Reload/Re-instancing Complete: 1 package changed, 1 class new
+[2023.08.03-20.28.12:623][632]LogLiveCoding: Warning: Live coding succeeded, data type changes may cause packaging to fail if assets reference the new or updated data types
+[2023.08.03-20.29.21:194][880]LogDerivedDataCache: C:/Users/robbi/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.763 and deleted 0 file(s) with total size 0 MiB.
+[2023.08.03-20.33.36:502][656]LogLiveCoding: Display: Starting Live Coding compile.
+[2023.08.03-20.33.59:353][394]LogLiveCoding: Display:    Creating library C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_2.lib and object C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_2.exp
+[2023.08.03-20.33.59:447][396]LogClass: /Script/SurvivalShooter Reload.
+[2023.08.03-20.33.59:447][396]LogClass: SurvivalShooterCharacter Reload.
+[2023.08.03-20.33.59:447][396]LogClass: Interactable Reload.
+[2023.08.03-20.33.59:448][396]LogClass: Could not find existing class SurvivalShooterCharacter in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.33.59:448][396]LogClass: Function HandleOnMontageEnded is new or belongs to a modified class.
+[2023.08.03-20.33.59:448][396]LogClass: Could not find existing class Interactable in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.33.59:448][396]LogClass: Function OnCapsuleBeginOverlap is new or belongs to a modified class.
+[2023.08.03-20.33.59:448][396]LogClass: Function OnCapsuleEndOverlap is new or belongs to a modified class.
+[2023.08.03-20.33.59:454][396]Re-instancing SurvivalShooterCharacter after reload.
+[2023.08.03-20.33.59:464][396]Re-instancing Interactable after reload.
+[2023.08.03-20.33.59:502][396]LogUObjectHash: Compacting FUObjectHashTables data took   0.37ms
+[2023.08.03-20.33.59:540][397]Display: Reload/Re-instancing Complete: 1 package changed, 2 classes changed, 3 classes unchanged, 5 functions remapped
+[2023.08.03-20.33.59:540][397]LogLiveCoding: Warning: Live coding succeeded, data type changes may cause packaging to fail if assets reference the new or updated data types
+[2023.08.03-20.34.04:659][904]LogUObjectHash: Compacting FUObjectHashTables data took   0.36ms
+[2023.08.03-20.34.05:260][904]LogSkeletalMesh: Display: [AssetLog] C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Content\CityofBrass_Enemies\Meshes\Enemy\Corpse_Melee\Corpse_Melee.uasset: Find and fix some bad tangent! please re-import this skeletal mesh asset to fix the issue. The shading of the skeletal mesh will be bad and faceted.
+[2023.08.03-20.34.05:356][904]LogAssetEditorSubsystem: Opening Asset editor for World /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame
+[2023.08.03-20.34.05:357][904]Cmd: MAP LOAD FILE="../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Maps/Demo_SurvivalGame.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2023.08.03-20.34.05:357][904]LightingResults: New page: Lighting Build
+[2023.08.03-20.34.05:357][904]LoadErrors: New page: Loading map: Demo_SurvivalGame.umap
+[2023.08.03-20.34.05:401][904]LogWorld: UWorld::CleanupWorld for FirstPersonMap, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.34.05:401][904]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.34.05:404][904]MapCheck: New page: Map Check
+[2023.08.03-20.34.05:404][904]LightingResults: New page: Lighting Build
+[2023.08.03-20.34.05:409][904]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.08.03-20.34.05:412][904]LogUObjectHash: Compacting FUObjectHashTables data took   0.45ms
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: ================================================
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: Shaders Compiled: 0
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0.00%)
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2023.08.03-20.34.05:412][904]LogShaderCompilers: Display: ================================================
+[2023.08.03-20.34.05:434][904]LogWorld: UWorld::CleanupWorld for Demo_SurvivalGame, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.34.05:435][904]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.34.05:443][904]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
+[2023.08.03-20.34.05:448][904]LogUObjectHash: Compacting FUObjectHashTables data took   0.32ms
+[2023.08.03-20.34.05:474][904]LogAudio: Display: Audio Device (ID: 1) registered with world 'Demo_SurvivalGame'.
+[2023.08.03-20.34.05:474][904]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2023.08.03-20.34.05:474][904]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.34.05:474][904]LogAIModule: Creating AISystem for world Demo_SurvivalGame
+[2023.08.03-20.34.05:536][904]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.08.03-20.34.05:554][904]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
+[2023.08.03-20.34.05:565][904]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.08.03-20.34.05:565][904]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0.12ms to complete.
+[2023.08.03-20.34.05:565][904]LogFileHelpers: Loading map 'Demo_SurvivalGame' took 0.209
+[2023.08.03-20.34.05:597][904]LogNiagara: Compiling System NiagaraSystem /Game/SurvivalShooter/Assets/Particles/Blood/NS_Blood.NS_Blood took 0.313058 sec, no shader worker used.
+[2023.08.03-20.34.11:534][551]Cmd: DELETE
+[2023.08.03-20.34.11:534][551]Cmd: ACTOR DELETE
+[2023.08.03-20.34.11:541][551]LogEditorActor: Deleted Actor: BP_AmmoStation_C
+[2023.08.03-20.34.11:547][551]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
+[2023.08.03-20.34.11:548][551]LogEditorActor: Deleted 1 Actors (0.014 secs)
+[2023.08.03-20.34.11:553][552]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.34.15:073][958]LogUObjectHash: Compacting FUObjectHashTables data took   0.17ms
+[2023.08.03-20.34.15:077][958]LogPackageLocalizationCache: Processed 30 localized package path(s) for 1 prioritized culture(s) in 0.003221 seconds
+[2023.08.03-20.34.15:225][958]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Maps/Demo_SurvivalGame
+[2023.08.03-20.34.15:225][958]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/Demo_SurvivalGameDFBBC50D4BB8B5E2BE3E22A6D18FA7FD.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Maps/Demo_SurvivalGame.umap'
+[2023.08.03-20.34.15:246][958]AssetCheck: New page: Asset Save: Demo_SurvivalGame
+[2023.08.03-20.34.15:246][958]LogContentValidation: Display: Validating World /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame
+[2023.08.03-20.34.17:507][216]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.34.21:892][653]LogUObjectHash: Compacting FUObjectHashTables data took   0.34ms
+[2023.08.03-20.34.28:249][653]LogSlate: Window 'Delete Assets' being destroyed
+[2023.08.03-20.34.28:297][653]LogUObjectGlobals: Force Deleting 1 Package(s):
+	Asset Name: /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation
+	Asset Type: Blueprint
+[2023.08.03-20.34.28:409][653]LogUObjectHash: Compacting FUObjectHashTables data took   0.34ms
+[2023.08.03-20.34.28:421][653]LogUObjectHash: Compacting FUObjectHashTables data took   0.23ms
+[2023.08.03-20.34.28:425][653]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
+[2023.08.03-20.34.28:430][653]LogUObjectHash: Compacting FUObjectHashTables data took   0.16ms
+[2023.08.03-20.34.30:417][861]LogUObjectHash: Compacting FUObjectHashTables data took   0.30ms
+[2023.08.03-20.34.31:586][861]LogSlate: Window 'Delete Assets' being destroyed
+[2023.08.03-20.34.31:597][861]LogUObjectHash: Compacting FUObjectHashTables data took   0.24ms
+[2023.08.03-20.34.31:602][861]LogUObjectHash: Compacting FUObjectHashTables data took   0.32ms
+[2023.08.03-20.34.31:606][861]LogUObjectHash: Compacting FUObjectHashTables data took   0.24ms
+[2023.08.03-20.34.55:042][603]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation
+[2023.08.03-20.34.55:043][603]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.34.55:822][603]LogSlate: Window 'Add Blueprint Class' being destroyed
+[2023.08.03-20.34.55:838][603]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_1:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.34.55:859][603]LogViewport: Scene viewport resized to 1017x693, mode Windowed.
+[2023.08.03-20.34.59:280][899]LogSlate: Took 0.000107 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.08.03-20.35.10:089][137]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.11:591][247]BlueprintLog: New page: Compile BP_AmmoStation
+[2023.08.03-20.35.11:601][247]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_1:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.11:601][247]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.11:648][247]LogUObjectHash: Compacting FUObjectHashTables data took   1.23ms
+[2023.08.03-20.35.11:650][247]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.12:373][306]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_4:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.12:381][306]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation
+[2023.08.03-20.35.12:381][306]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/BP_AmmoStation42C1CAE6443835159204A08D1549C4C4.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.uasset'
+[2023.08.03-20.35.12:392][306]AssetCheck: New page: Asset Save: BP_AmmoStation
+[2023.08.03-20.35.12:392][306]LogContentValidation: Display: Validating Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation
+[2023.08.03-20.35.19:987][ 12]LogSlate: Window 'BP_AmmoStation' being destroyed
+[2023.08.03-20.35.19:994][ 12]LogWorld: UWorld::CleanupWorld for World_1, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.35.19:994][ 12]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.35.23:141][361]LogSlate: Window 'Content Browser' being destroyed
+[2023.08.03-20.35.23:145][361]LogSlate: Window 'Content Browser' being destroyed
+[2023.08.03-20.35.36:329][883]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop
+[2023.08.03-20.35.36:329][883]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.35.36:697][883]LogSlate: Window 'Add Blueprint Class' being destroyed
+[2023.08.03-20.35.36:708][883]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_5:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.36:744][883]LogViewport: Scene viewport resized to 1017x693, mode Windowed.
+[2023.08.03-20.35.40:456][237]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_6:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.41:692][343]BlueprintLog: New page: Compile BP_RifleShop
+[2023.08.03-20.35.41:702][343]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_5:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.41:703][343]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_6:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.41:757][343]LogUObjectHash: Compacting FUObjectHashTables data took   1.25ms
+[2023.08.03-20.35.41:759][343]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_6:PersistentLevel.BP_RifleShop_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.42:204][377]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_7:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.42:212][377]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop
+[2023.08.03-20.35.42:212][377]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/BP_RifleShop770D5C2342609C3AF985828C35EAC6D6.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.uasset'
+[2023.08.03-20.35.42:222][377]AssetCheck: New page: Asset Save: BP_RifleShop
+[2023.08.03-20.35.42:222][377]LogContentValidation: Display: Validating Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop
+[2023.08.03-20.35.42:941][442]LogSlate: Window 'BP_RifleShop' being destroyed
+[2023.08.03-20.35.42:949][442]LogWorld: UWorld::CleanupWorld for World_5, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.35.42:949][442]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.35.44:331][595]LogSlate: Window 'Content Browser' being destroyed
+[2023.08.03-20.35.44:334][595]LogSlate: Window 'Content Browser' being destroyed
+[2023.08.03-20.35.49:001][120]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation_C
+[2023.08.03-20.35.49:001][120]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation_C
+[2023.08.03-20.35.49:001][120]LogActor: Warning: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.49:001][120]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation as actor: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_0
+[2023.08.03-20.35.49:002][120]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation as actor: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_0
+[2023.08.03-20.35.50:955][353]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation_C
+[2023.08.03-20.35.50:955][353]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation_C
+[2023.08.03-20.35.50:955][353]LogActor: Warning: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.35.50:956][353]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation as actor: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_1
+[2023.08.03-20.35.50:956][353]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation as actor: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_1
+[2023.08.03-20.35.50:983][354]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.54:567][774]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.54:709][791]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.54:884][812]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.55:009][827]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.55:242][855]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.55:735][914]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.56:346][985]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.58:257][210]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.58:650][257]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.35.58:969][293]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.04:740][975]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.04:769][978]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.04:894][993]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.04:919][996]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.05:269][ 38]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.05:377][ 51]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.05:428][ 57]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.05:653][ 84]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.05:728][ 93]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.05:745][ 95]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.06:561][193]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.07:561][313]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.09:489][543]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.10:030][608]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.10:122][619]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.10:188][627]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.10:655][683]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.11:438][777]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.12:697][928]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.13:197][988]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.18:716][638]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.36.23:040][130]LogUObjectHash: Compacting FUObjectHashTables data took   1.04ms
+[2023.08.03-20.36.23:206][130]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Maps/Demo_SurvivalGame
+[2023.08.03-20.36.23:207][130]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/Demo_SurvivalGame9B985A6646C11B9DEF5958BA6B235360.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Maps/Demo_SurvivalGame.umap'
+[2023.08.03-20.36.23:227][130]AssetCheck: New page: Asset Save: Demo_SurvivalGame
+[2023.08.03-20.36.23:227][130]LogContentValidation: Display: Validating World /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame
+[2023.08.03-20.36.29:790][863]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation
+[2023.08.03-20.36.29:790][863]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.36.30:126][863]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_8:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.36.37:402][646]LogSlate: Window 'BP_AmmoStation' being destroyed
+[2023.08.03-20.36.37:409][646]LogWorld: UWorld::CleanupWorld for World_8, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.36.37:409][646]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.37.10:863][954]LogLiveCoding: Display: Starting Live Coding compile.
+[2023.08.03-20.37.20:969][158]LogLiveCoding: Display:    Creating library C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_3.lib and object C:\Users\robbi\OneDrive\Documents\Unreal Projects\SurvivalShooter\Binaries\Win64\UnrealEditor-SurvivalShooter.patch_3.exp
+[2023.08.03-20.37.21:080][161]LogClass: /Script/SurvivalShooter Reload.
+[2023.08.03-20.37.21:081][161]LogClass: Interactable Reload.
+[2023.08.03-20.37.21:084][161]LogClass: Could not find existing class Interactable in package /Script/SurvivalShooter for reload, assuming new or modified class
+[2023.08.03-20.37.21:084][161]LogClass: Function OnCapsuleBeginOverlap is new or belongs to a modified class.
+[2023.08.03-20.37.21:084][161]LogClass: Function OnCapsuleEndOverlap is new or belongs to a modified class.
+[2023.08.03-20.37.21:098][161]Re-instancing Interactable after reload.
+[2023.08.03-20.37.21:100][161]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_4:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.21:101][161]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.21:101][161]LogActor: Warning: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.21:111][161]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_7:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.21:111][161]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_6:PersistentLevel.BP_RifleShop_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.21:221][161]LogUObjectHash: Compacting FUObjectHashTables data took   0.96ms
+[2023.08.03-20.37.21:492][162]Display: Reload/Re-instancing Complete: 1 package changed, 1 class changed, 4 classes unchanged, 6 functions remapped
+[2023.08.03-20.37.21:492][162]LogLiveCoding: Warning: Live coding succeeded, data type changes may cause packaging to fail if assets reference the new or updated data types
+[2023.08.03-20.37.21:501][162]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.37.27:456][745]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_6:PersistentLevel.BP_RifleShop_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.27:457][745]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.27:977][791]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation
+[2023.08.03-20.37.27:977][791]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.37.28:426][791]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_9:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.37:595][762]LogAssetEditorSubsystem: Opening Asset editor for WidgetBlueprint /Game/SurvivalShooter/Blueprints/UI/WB_FPSHUD.WB_FPSHUD
+[2023.08.03-20.37.37:595][762]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.37.37:600][762]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.37.37:606][762]LogSlate: Warning: The command 'UMGEditor.OpenAnimDrawer' has the same default chord as 'EditorViewport.Next' [Ctrl+Shift+Space Bar]
+[2023.08.03-20.37.37:833][762]LogSlateStyle: Warning: Unable to find Slate Widget Style 'None'. Using FToolbarStyle defaults instead.
+[2023.08.03-20.37.37:833][762]LogSlateStyle: Warning: Unable to find Slate Widget Style 'None'. Using FToolbarStyle defaults instead.
+[2023.08.03-20.37.38:245][762]LogSlateStyle: Warning: Missing Resource from 'CoreStyle' Style: 'Unable to find SlateColor 'Foreground'.'
+[2023.08.03-20.37.49:669][777]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.37.50:464][861]BlueprintLog: New page: Compile BP_AmmoStation
+[2023.08.03-20.37.50:487][861]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_4:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.50:488][861]LogActor: Warning: BP_AmmoStation_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AmmoStation_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.50:498][861]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.50:499][861]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_9:PersistentLevel.BP_AmmoStation_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.50:628][861]LogUObjectHash: Compacting FUObjectHashTables data took   1.81ms
+[2023.08.03-20.37.50:634][861]LogActor: Warning: BP_AmmoStation_C /Engine/Transient.World_0:PersistentLevel.BP_AmmoStation_C_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.37.50:687][862]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.37.51:170][904]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation
+[2023.08.03-20.37.51:170][904]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/BP_AmmoStationAA4B4381411FEF3B49252EA7CEEACDF0.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.uasset'
+[2023.08.03-20.37.51:182][904]AssetCheck: New page: Asset Save: BP_AmmoStation
+[2023.08.03-20.37.51:182][904]LogContentValidation: Display: Validating Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_AmmoStation.BP_AmmoStation
+[2023.08.03-20.37.58:710][703]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop
+[2023.08.03-20.37.58:710][703]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.37.59:012][703]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_12:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.38.16:042][582]BlueprintLog: New page: Compile BP_RifleShop
+[2023.08.03-20.38.16:065][582]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_7:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.38.16:065][582]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_6:PersistentLevel.BP_RifleShop_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.38.16:065][582]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_12:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.38.16:153][582]LogUObjectHash: Compacting FUObjectHashTables data took   1.54ms
+[2023.08.03-20.38.16:160][582]LogActor: Warning: BP_RifleShop_C /Engine/Transient.World_6:PersistentLevel.BP_RifleShop_C_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.38.16:711][631]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop
+[2023.08.03-20.38.16:712][631]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/BP_RifleShop8BBC72CC458BE73BFB57588DDE325264.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.uasset'
+[2023.08.03-20.38.16:725][631]AssetCheck: New page: Asset Save: BP_RifleShop
+[2023.08.03-20.38.16:725][631]LogContentValidation: Display: Validating Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop
+[2023.08.03-20.38.22:363][240]LogWorld: UWorld::CleanupWorld for World_12, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.38.22:363][240]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.38.24:401][434]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2023.08.03-20.38.24:401][434]LogWorld: UWorld::CleanupWorld for World_9, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.38.24:401][434]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.38.31:330][151]BlueprintLog: New page: Compile WB_FPSHUD
+[2023.08.03-20.38.31:390][151]LogUObjectHash: Compacting FUObjectHashTables data took   1.19ms
+[2023.08.03-20.38.31:947][188]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Blueprints/UI/WB_FPSHUD
+[2023.08.03-20.38.31:948][188]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/WB_FPSHUD7676C64443EFADBB6DFFD2A27B121EE1.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Blueprints/UI/WB_FPSHUD.uasset'
+[2023.08.03-20.38.31:962][188]AssetCheck: New page: Asset Save: WB_FPSHUD
+[2023.08.03-20.38.31:962][188]LogContentValidation: Display: Validating WidgetBlueprint /Game/SurvivalShooter/Blueprints/UI/WB_FPSHUD.WB_FPSHUD
+[2023.08.03-20.39.23:748][674]BlueprintLog: New page: Compile WB_FPSHUD
+[2023.08.03-20.39.23:791][674]LogUObjectHash: Compacting FUObjectHashTables data took   1.36ms
+[2023.08.03-20.39.24:335][721]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Blueprints/UI/WB_FPSHUD
+[2023.08.03-20.39.24:336][721]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/WB_FPSHUDEC18DA7B4BC05CCF9BF575A0943EB4B6.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Blueprints/UI/WB_FPSHUD.uasset'
+[2023.08.03-20.39.24:352][721]AssetCheck: New page: Asset Save: WB_FPSHUD
+[2023.08.03-20.39.24:352][721]LogContentValidation: Display: Validating WidgetBlueprint /Game/SurvivalShooter/Blueprints/UI/WB_FPSHUD.WB_FPSHUD
+[2023.08.03-20.39.25:451][837]LogSlate: Window 'WB_FPSHUD' being destroyed
+[2023.08.03-20.39.25:461][837]LogWorld: UWorld::CleanupWorld for World_11, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.39.25:461][837]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.39.25:468][837]LogWorld: UWorld::CleanupWorld for World_10, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.39.25:468][837]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.39.26:365][934]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2023.08.03-20.39.26:371][934]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.08.03-20.39.26:371][934]PIE: New page: PIE session: Demo_SurvivalGame (Aug 3, 2023, 12:39:26 PM)
+[2023.08.03-20.39.26:373][934]LogOnline: OSS: Created online subsystem instance for: NULL
+[2023.08.03-20.39.26:373][934]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+[2023.08.03-20.39.26:373][934]LogPlayLevel: Creating play world package: /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame
+[2023.08.03-20.39.26:410][934]LogPlayLevel: PIE: StaticDuplicateObject took: (0.036385s)
+[2023.08.03-20.39.26:410][934]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame to /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame.Demo_SurvivalGame (0.036445s)
+[2023.08.03-20.39.26:410][934]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2023.08.03-20.39.26:410][934]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.39.26:410][934]LogAIModule: Creating AISystem for world Demo_SurvivalGame
+[2023.08.03-20.39.26:410][934]LogPlayLevel: PIE: World Init took: (0.000560s)
+[2023.08.03-20.39.26:447][934]LogUObjectHash: Compacting FUObjectHashTables data took   1.80ms
+[2023.08.03-20.39.26:460][934]LogAudio: Display: Creating Audio Device:                 Id: 2, Scope: Unique, Realtime: True
+[2023.08.03-20.39.26:460][934]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.08.03-20.39.26:460][934]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.08.03-20.39.26:460][934]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.08.03-20.39.26:460][934]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.08.03-20.39.26:460][934]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.08.03-20.39.26:460][934]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2023.08.03-20.39.26:460][934]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.08.03-20.39.26:460][934]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.08.03-20.39.26:460][934]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.08.03-20.39.26:460][934]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.08.03-20.39.26:460][934]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.08.03-20.39.26:462][934]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2023.08.03-20.39.26:475][934]LogAudioMixer: Display: Using Audio Hardware Device Speakers (Yeti Nano)
+[2023.08.03-20.39.26:475][934]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.08.03-20.39.26:475][934]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.08.03-20.39.26:475][934]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.08.03-20.39.26:476][934]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=2
+[2023.08.03-20.39.26:476][934]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=2
+[2023.08.03-20.39.26:477][934]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=2
+[2023.08.03-20.39.26:477][934]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=2
+[2023.08.03-20.39.26:477][934]LogInit: FAudioDevice initialized.
+[2023.08.03-20.39.26:477][934]LogAudio: Display: Audio Device (ID: 2) registered with world 'Demo_SurvivalGame'.
+[2023.08.03-20.39.26:628][934]LogLoad: Game class is 'BP_SurvivalShooterGameMode_C'
+[2023.08.03-20.39.26:667][934]LogWorld: Bringing World /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame.Demo_SurvivalGame up for play (max tick rate 0) at 2023.08.03-16.39.26
+[2023.08.03-20.39.26:674][934]LogWorld: Bringing up level for play took: 0.045822
+[2023.08.03-20.39.26:676][934]LogOnline: OSS: Created online subsystem instance for: :Context_14
+[2023.08.03-20.39.26:691][934]LogActor: Warning: BP_AssaultRifle_C /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AssaultRifle_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.39.26:692][934]PIE: Server logged in
+[2023.08.03-20.39.26:692][934]PIE: Play in editor total start time 0.323 seconds.
+[2023.08.03-20.39.26:729][934]LogAudio: Warning: Detected orphaned sound which is not a one-shot 'ArabActionMusic'. Sounds which are not one-shots need to have audio components or they risk being orphaned.
+[2023.08.03-20.39.42:037][ 72]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.08.03-20.39.42:037][ 72]LogWorld: BeginTearingDown for /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame
+[2023.08.03-20.39.42:038][ 72]LogWorld: UWorld::CleanupWorld for Demo_SurvivalGame, bSessionEnded=true, bCleanupResources=true
+[2023.08.03-20.39.42:043][ 72]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.39.42:051][ 72]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.08.03-20.39.42:058][ 72]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.08.03-20.39.42:076][ 72]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.08.03-20.39.42:080][ 72]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=2
+[2023.08.03-20.39.42:081][ 72]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=2
+[2023.08.03-20.39.42:157][ 72]LogUObjectHash: Compacting FUObjectHashTables data took   1.50ms
+[2023.08.03-20.39.42:200][ 73]LogPlayLevel: Display: Destroying online subsystem :Context_14
+[2023.08.03-20.40.05:689][188]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large.Box_Large
+[2023.08.03-20.40.05:689][188]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large.Box_Large
+[2023.08.03-20.40.05:689][188]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large.Box_Large as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_1
+[2023.08.03-20.40.07:600][412]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large.Box_Large
+[2023.08.03-20.40.07:600][412]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large.Box_Large
+[2023.08.03-20.40.07:600][412]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large.Box_Large as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_3
+[2023.08.03-20.40.07:632][413]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.09:988][650]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Closed.Box_Large_Closed
+[2023.08.03-20.40.09:989][650]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Closed.Box_Large_Closed
+[2023.08.03-20.40.09:989][650]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Closed.Box_Large_Closed as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_4
+[2023.08.03-20.40.10:689][730]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Closed.Box_Large_Closed
+[2023.08.03-20.40.10:690][730]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Closed.Box_Large_Closed
+[2023.08.03-20.40.10:690][730]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Closed.Box_Large_Closed as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_5
+[2023.08.03-20.40.10:719][731]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.12:647][950]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.12:706][957]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.12:780][966]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.12:914][982]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.13:147][ 10]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.13:763][ 84]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.14:097][124]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.14:864][216]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.15:256][263]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.15:572][301]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.16:044][355]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.19:125][671]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Loot.Box_Loot
+[2023.08.03-20.40.19:125][671]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Loot.Box_Loot
+[2023.08.03-20.40.19:125][671]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Loot.Box_Loot as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_6
+[2023.08.03-20.40.20:395][820]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Loot.Box_Loot
+[2023.08.03-20.40.20:395][820]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Loot.Box_Loot
+[2023.08.03-20.40.20:396][820]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Loot.Box_Loot as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_7
+[2023.08.03-20.40.20:424][821]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.22:715][ 48]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.22:715][ 48]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.22:716][ 48]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_8
+[2023.08.03-20.40.23:927][189]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.23:927][189]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.23:928][189]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_9
+[2023.08.03-20.40.23:957][190]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.28:797][714]LogStaticMesh: Display: Building static mesh Box_Large_Broken...
+[2023.08.03-20.40.28:866][714]LogStaticMesh: Built static mesh [0.02s] /Game/City_of_Brass_Props/Meshes/Box_Large_Broken.Box_Large_Broken
+[2023.08.03-20.40.28:992][724]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Broken.Box_Large_Broken
+[2023.08.03-20.40.28:992][724]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Broken.Box_Large_Broken
+[2023.08.03-20.40.28:992][724]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Broken.Box_Large_Broken as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_10
+[2023.08.03-20.40.30:584][911]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Broken.Box_Large_Broken
+[2023.08.03-20.40.30:585][911]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Broken.Box_Large_Broken
+[2023.08.03-20.40.30:585][911]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Large_Broken.Box_Large_Broken as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_11
+[2023.08.03-20.40.30:614][912]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.31:774][ 48]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.31:816][ 53]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.31:866][ 59]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.31:924][ 66]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.32:007][ 76]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.32:090][ 86]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.32:165][ 95]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.32:248][105]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.32:440][128]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.32:853][175]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.35:770][515]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.35:853][525]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.36:095][554]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.36:320][581]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.36:768][632]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.45:901][664]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.45:901][664]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.45:901][664]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_12
+[2023.08.03-20.40.47:682][873]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.47:682][873]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small
+[2023.08.03-20.40.47:683][873]LogActorFactory: Actor Factory spawned StaticMesh /Game/City_of_Brass_Props/Meshes/Box_Small.Box_Small as actor: StaticMeshActor /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.StaticMeshActor_13
+[2023.08.03-20.40.47:713][874]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.51:282][261]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop_C
+[2023.08.03-20.40.51:282][261]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop_C
+[2023.08.03-20.40.51:282][261]LogActor: Warning: BP_RifleShop_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_RifleShop_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.40.51:283][261]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop as actor: BP_RifleShop_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_RifleShop_C_0
+[2023.08.03-20.40.51:283][261]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop as actor: BP_RifleShop_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_RifleShop_C_0
+[2023.08.03-20.40.52:531][406]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop_C
+[2023.08.03-20.40.52:532][406]LogActorFactory: Actor Factory attempting to spawn BlueprintGeneratedClass /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop_C
+[2023.08.03-20.40.52:532][406]LogActor: Warning: BP_RifleShop_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_RifleShop_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.40.52:533][406]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop as actor: BP_RifleShop_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_RifleShop_C_1
+[2023.08.03-20.40.52:533][406]LogActorFactory: Actor Factory spawned Blueprint /Game/SurvivalShooter/Blueprints/Interactables/BP_RifleShop.BP_RifleShop as actor: BP_RifleShop_C /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_RifleShop_C_1
+[2023.08.03-20.40.52:562][407]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.54:857][667]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.54:940][677]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.55:015][686]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.55:082][694]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.55:173][705]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.55:307][721]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.55:707][769]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.56:124][819]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.56:740][893]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.57:153][940]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.59:644][234]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.40.59:977][274]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.00:261][308]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.00:556][341]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.02:159][527]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.02:933][620]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.03:296][661]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.12:899][797]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.13:008][810]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.13:233][837]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.14:136][943]LogNavigationDataBuild: Navigation data generation finished in /Game/SurvivalShooter/Maps/Demo_SurvivalGame.
+[2023.08.03-20.41.17:352][307]LogUObjectHash: Compacting FUObjectHashTables data took   1.32ms
+[2023.08.03-20.41.17:520][307]LogSavePackage: Moving output files for package: /Game/SurvivalShooter/Maps/Demo_SurvivalGame
+[2023.08.03-20.41.17:521][307]LogSavePackage: Moving '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Saved/Demo_SurvivalGame1E00C1F041CA4E84F030FBA49FBCC67E.tmp' to '../../../../../../Users/robbi/OneDrive/Documents/Unreal Projects/SurvivalShooter/Content/SurvivalShooter/Maps/Demo_SurvivalGame.umap'
+[2023.08.03-20.41.17:543][307]AssetCheck: New page: Asset Save: Demo_SurvivalGame
+[2023.08.03-20.41.17:544][307]LogContentValidation: Display: Validating World /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame
+[2023.08.03-20.41.18:250][387]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2023.08.03-20.41.18:256][387]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.08.03-20.41.18:257][387]PIE: New page: PIE session: Demo_SurvivalGame (Aug 3, 2023, 12:41:18 PM)
+[2023.08.03-20.41.18:286][387]LogPlayLevel: Creating play world package: /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame
+[2023.08.03-20.41.18:322][387]LogPlayLevel: PIE: StaticDuplicateObject took: (0.036423s)
+[2023.08.03-20.41.18:322][387]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/SurvivalShooter/Maps/Demo_SurvivalGame.Demo_SurvivalGame to /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame.Demo_SurvivalGame (0.036491s)
+[2023.08.03-20.41.18:322][387]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2023.08.03-20.41.18:322][387]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.08.03-20.41.18:323][387]LogAIModule: Creating AISystem for world Demo_SurvivalGame
+[2023.08.03-20.41.18:323][387]LogPlayLevel: PIE: World Init took: (0.000572s)
+[2023.08.03-20.41.18:342][387]LogUObjectHash: Compacting FUObjectHashTables data took   1.08ms
+[2023.08.03-20.41.18:347][387]LogAudio: Display: Creating Audio Device:                 Id: 3, Scope: Unique, Realtime: True
+[2023.08.03-20.41.18:347][387]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.08.03-20.41.18:347][387]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.08.03-20.41.18:347][387]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.08.03-20.41.18:347][387]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.08.03-20.41.18:347][387]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.08.03-20.41.18:347][387]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2023.08.03-20.41.18:347][387]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.08.03-20.41.18:347][387]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.08.03-20.41.18:347][387]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.08.03-20.41.18:347][387]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.08.03-20.41.18:347][387]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.08.03-20.41.18:349][387]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2023.08.03-20.41.18:362][387]LogAudioMixer: Display: Using Audio Hardware Device Speakers (Yeti Nano)
+[2023.08.03-20.41.18:362][387]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.08.03-20.41.18:362][387]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.08.03-20.41.18:362][387]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.08.03-20.41.18:362][387]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=3
+[2023.08.03-20.41.18:362][387]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=3
+[2023.08.03-20.41.18:363][387]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=3
+[2023.08.03-20.41.18:363][387]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=3
+[2023.08.03-20.41.18:363][387]LogInit: FAudioDevice initialized.
+[2023.08.03-20.41.18:363][387]LogAudio: Display: Audio Device (ID: 3) registered with world 'Demo_SurvivalGame'.
+[2023.08.03-20.41.18:377][387]LogLoad: Game class is 'BP_SurvivalShooterGameMode_C'
+[2023.08.03-20.41.18:416][387]LogWorld: Bringing World /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame.Demo_SurvivalGame up for play (max tick rate 0) at 2023.08.03-16.41.18
+[2023.08.03-20.41.18:424][387]LogWorld: Bringing up level for play took: 0.047539
+[2023.08.03-20.41.18:426][387]LogOnline: OSS: Created online subsystem instance for: :Context_15
+[2023.08.03-20.41.18:429][387]LogActor: Warning: BP_AssaultRifle_C /Game/SurvivalShooter/Maps/UEDPIE_0_Demo_SurvivalGame.Demo_SurvivalGame:PersistentLevel.BP_AssaultRifle_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2023.08.03-20.41.18:429][387]PIE: Server logged in
+[2023.08.03-20.41.18:430][387]PIE: Play in editor total start time 0.174 seconds.
+[2023.08.03-20.41.18:538][387]LogAudio: Warning: Detected orphaned sound which is not a one-shot 'ArabActionMusic'. Sounds which are not one-shots need to have audio components or they risk being orphaned.
