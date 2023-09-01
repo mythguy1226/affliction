@@ -59,43 +59,95 @@ void UTP_WeaponComponent::Fire()
 		FCollisionQueryParams QueryParams;
 		QueryParams.AddIgnoredActor(PlayerController);
 		
-		// LineTrace in direction of shot and store the first object it hits
-		TArray<FHitResult> outHits;
-		World->LineTraceMultiByChannel(outHits, SpawnLocation, SpawnLocation + (camManager->GetCameraRotation().Vector() * 3000), ECollisionChannel::ECC_Pawn, QueryParams);
-		//UKismetSystemLibrary::LineTraceMulti(GetWorld(), SpawnLocation, SpawnLocation + (camManager->GetCameraRotation().Vector() * 3000), 
-		//	UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), false,
-		//	TArray<AActor*>(), EDrawDebugTrace::ForDuration, outHits, true);
-
-		// Check that a collision happened
-		if (outHits.Num() > 0)
+		switch (Character->m_pEquippedWeapon->m_eWeaponType)
 		{
-			// Iterate through the hit results
-			for (auto i = outHits.CreateIterator(); i; i++)
+		case EWeaponType::WT_Shotgun:
+			for (int iter = 0; iter < FMath::RandRange(12, 16); iter++)
 			{
-				// Handler for when LineTrace hits an enemy
-				AEnemy* enemy = Cast<AEnemy>(i->GetActor());
-				if (enemy)
-				{
-					// Handle enemy damage and point additions
-					enemy->TakeDamage(m_fDamage);
-					Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 10;
+				// Make a random offset to spread
+				float fSpread = 100;
+				FVector vOffset = FVector(FMath::RandRange(-fSpread, fSpread), FMath::RandRange(-fSpread, fSpread), FMath::RandRange(-fSpread, fSpread));
+				FVector vEnd = SpawnLocation + (camManager->GetCameraRotation().Vector() * 1000) + vOffset;
 
-					// Play blood splat particle
-					if (enemy->m_pBloodParticle != nullptr)
-					{
-						UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), enemy->m_pBloodParticle, i->ImpactPoint, SpawnRotation);
-					}
-					break;
-				}
-				else // Handler for when LineTrace hits anything else
+				// LineTrace in direction of shot and store the first object it hits
+				TArray<FHitResult> outHits;
+				World->LineTraceMultiByChannel(outHits, SpawnLocation, vEnd, ECollisionChannel::ECC_Pawn, QueryParams);
+				//UKismetSystemLibrary::LineTraceMulti(GetWorld(), SpawnLocation, vEnd, 
+				//	UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), false,
+				//	TArray<AActor*>(), EDrawDebugTrace::ForDuration, outHits, true);
+
+				// Check that a collision happened
+				if (outHits.Num() > 0)
 				{
-					// If sounds exist then play them
-					if (environmentSounds.Num() > 0)
+					// Iterate through the hit results
+					for (auto i = outHits.CreateIterator(); i; i++)
 					{
-						UGameplayStatics::PlaySoundAtLocation(GetWorld(), environmentSounds[FMath::RandRange(0, environmentSounds.Num() - 1)], Character->GetActorLocation());
+						// Handler for when LineTrace hits an enemy
+						AEnemy* enemy = Cast<AEnemy>(i->GetActor());
+						if (enemy)
+						{
+							// Handle enemy damage and point additions
+							enemy->TakeDamage(m_fDamage);
+							Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 10;
+
+							// Play blood splat particle
+							if (enemy->m_pBloodParticle != nullptr)
+							{
+								UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), enemy->m_pBloodParticle, i->ImpactPoint, SpawnRotation);
+							}
+						}
+						else // Handler for when LineTrace hits anything else
+						{
+							// If sounds exist then play them
+							if (environmentSounds.Num() > 0)
+							{
+								UGameplayStatics::PlaySoundAtLocation(GetWorld(), environmentSounds[FMath::RandRange(0, environmentSounds.Num() - 1)], Character->GetActorLocation());
+							}
+						}
 					}
 				}
 			}
+			break;
+		default:
+			// LineTrace in direction of shot and store the first object it hits
+			TArray<FHitResult> outHits;
+			World->LineTraceMultiByChannel(outHits, SpawnLocation, SpawnLocation + (camManager->GetCameraRotation().Vector() * 3000), ECollisionChannel::ECC_Pawn, QueryParams);
+			//UKismetSystemLibrary::LineTraceMulti(GetWorld(), SpawnLocation, SpawnLocation + (camManager->GetCameraRotation().Vector() * 3000), 
+			//	UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), false,
+			//	TArray<AActor*>(), EDrawDebugTrace::ForDuration, outHits, true);
+
+			// Check that a collision happened
+			if (outHits.Num() > 0)
+			{
+				// Iterate through the hit results
+				for (auto i = outHits.CreateIterator(); i; i++)
+				{
+					// Handler for when LineTrace hits an enemy
+					AEnemy* enemy = Cast<AEnemy>(i->GetActor());
+					if (enemy)
+					{
+						// Handle enemy damage and point additions
+						enemy->TakeDamage(m_fDamage);
+						Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 10;
+
+						// Play blood splat particle
+						if (enemy->m_pBloodParticle != nullptr)
+						{
+							UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), enemy->m_pBloodParticle, i->ImpactPoint, SpawnRotation);
+						}
+						break;
+					}
+					else // Handler for when LineTrace hits anything else
+					{
+						// If sounds exist then play them
+						if (environmentSounds.Num() > 0)
+						{
+							UGameplayStatics::PlaySoundAtLocation(GetWorld(), environmentSounds[FMath::RandRange(0, environmentSounds.Num() - 1)], Character->GetActorLocation());
+						}
+					}
+				}
+			}
+			break;
 		}
 		// Decrease ammo count when shot is successful
 		Character->m_pEquippedWeapon->m_iCurrentAmmo = Character->m_pEquippedWeapon->m_iCurrentAmmo - 1;

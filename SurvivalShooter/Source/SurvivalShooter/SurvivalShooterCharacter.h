@@ -40,6 +40,10 @@ class ASurvivalShooterCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class AActor> m_cRifle;
 
+	/* Shotgun Class to Spawn*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class AActor> m_cShotgun;
+
 	/* Get the blueprint widget to assign to the player viewport */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class UUserWidget> m_cPlayerHUD;
@@ -73,12 +77,16 @@ public:
 	UAnimMontage* m_pReloadMontage;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 	UAnimMontage* m_pRifleReloadMontage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
+	UAnimMontage* m_pShotgunReloadMontage;
 
 	/** AnimMontage to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 	UAnimMontage* m_pShootMontage;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 	UAnimMontage* m_pRifleShootMontage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
+	UAnimMontage* m_pShotgunShootMontage;
 
 	/* Gets the sound used for swapping weapons */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound")
