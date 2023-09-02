@@ -23,7 +23,7 @@ EBTNodeResult::Type UBTT_MeleeAttack::ExecuteTask(UBehaviorTreeComponent& a_pOwn
 	AEnemy* const enemy = Cast<AEnemy>(controller->GetPawn());
 
 	// Check if montage has finished
-	if (attackMontageFinished(enemy))
+	if (AttackMontageFinished(enemy))
 	{
 		// Check that enemy is in range to attack
 		bool canAttack = controller->get_blackboard()->GetValueAsBool(bb_keys::player_in_melee_range);
@@ -40,8 +40,8 @@ EBTNodeResult::Type UBTT_MeleeAttack::ExecuteTask(UBehaviorTreeComponent& a_pOwn
 	return EBTNodeResult::Succeeded;
 }
 
-bool UBTT_MeleeAttack::attackMontageFinished(AEnemy* m_pEnemy)
+bool UBTT_MeleeAttack::AttackMontageFinished(AEnemy* m_pEnemy)
 {
 	// Return if the attack montage is finished
-	return m_pEnemy->GetMesh()->GetAnimInstance()->Montage_GetIsStopped(m_pEnemy->GetAttackMontage());
+	return m_pEnemy->GetMesh()->GetAnimInstance()->Montage_GetIsStopped(m_pEnemy->m_pAttackMontage);
 }

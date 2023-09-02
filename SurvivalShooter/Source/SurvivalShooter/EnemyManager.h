@@ -28,14 +28,14 @@ public:
 
 	// Enemies per wave
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Management")
-	int m_iFirstWaveCount;
+	int m_iFirstWaveCount = 5;
 
 	// Only manage waves in here but make readable for UI
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	int m_iCurrentWave = 1;
 
 	// Enemy Count and Kill trackers
-	int m_iCurrentWaveSize = 5;
+	int m_iCurrentWaveSize;
 	int m_iWaveKills = 0;
 
 	// Method for spawning the first wave
@@ -46,6 +46,9 @@ public:
 
 	// Method for spawning the next wave
 	void StartNextWave();
+
+	// Helper Method for spawning an enemy
+	void SpawnEnemy(AEnemy* a_pEnemy);
 
 	// Method for spawning more enemies for wave
 	void SpawnMoreEnemies();

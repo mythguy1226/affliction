@@ -13,32 +13,30 @@
 // Sets default values for this component's properties
 UTP_WeaponComponent::UTP_WeaponComponent()
 {
-	// Default offset from the character location for projectiles to spawn
-	MuzzleOffset = FVector(100.0f, 0.0f, 10.0f);
 }
 
 
 void UTP_WeaponComponent::Fire()
 {
 	// Invalid player Check
-	if(Character == nullptr || Character->GetController() == nullptr)
+	if(m_pCharacter == nullptr || m_pCharacter->GetController() == nullptr)
 	{
 		return;
 	}
 
 	// Check that weapon is equipped
-	if (Character->m_pEquippedWeapon->WeaponComponent != this)
+	if (m_pCharacter->m_pEquippedWeapon->m_pWeaponComponent != this)
 	{
 		return;
 	}
 
 	// Ammo Empty Check
-	if (Character->m_pEquippedWeapon->m_iCurrentAmmo <= 0)
+	if (m_pCharacter->m_pEquippedWeapon->m_iCurrentAmmo <= 0)
 	{
 		// Try and play the sound if specified
-		if (EmptySound != nullptr)
+		if (m_pEmptySound != nullptr)
 		{
-			UGameplayStatics::PlaySoundAtLocation(this, EmptySound, Character->GetActorLocation());
+			UGameplayStatics::PlaySoundAtLocation(this, m_pEmptySound, m_pCharacter->GetActorLocation());
 		}
 		return;
 	}
@@ -47,152 +45,121 @@ void UTP_WeaponComponent::Fire()
 	if (World != nullptr)
 	{
 		// Get player controller, and spawn transform information
-		APlayerController* PlayerController = Cast<APlayerController>(Character->GetController());
-		const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-		// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
-		const FVector SpawnLocation = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(MuzzleOffset);
-		
+		APlayerController* PlayerController = Cast<APlayerController>(m_pCharacter->GetController());
+
 		// Get reference to camera manager
 		APlayerCameraManager* camManager = World->GetFirstPlayerController()->PlayerCameraManager;
+
+		// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
+		const FRotator rSpawnRotation = camManager->GetCameraRotation();
+		const FVector vSpawnLocation = GetOwner()->GetActorLocation() + rSpawnRotation.RotateVector(m_vMuzzleOffset);
 		
-		// Set the query params to ignore self
-		FCollisionQueryParams QueryParams;
-		QueryParams.AddIgnoredActor(PlayerController);
 		
-		switch (Character->m_pEquippedWeapon->m_eWeaponType)
+		switch (m_pCharacter->m_pEquippedWeapon->m_eWeaponType)
 		{
 		case EWeaponType::WT_Shotgun:
+			// Iterate as many times as there are pellets
 			for (int iter = 0; iter < FMath::RandRange(12, 16); iter++)
 			{
 				// Make a random offset to spread
 				float fSpread = 100;
 				FVector vOffset = FVector(FMath::RandRange(-fSpread, fSpread), FMath::RandRange(-fSpread, fSpread), FMath::RandRange(-fSpread, fSpread));
-				FVector vEnd = SpawnLocation + (camManager->GetCameraRotation().Vector() * 1000) + vOffset;
+				FVector vEnd = vSpawnLocation + (camManager->GetCameraRotation().Vector() * 1000) + vOffset;
 
-				// LineTrace in direction of shot and store the first object it hits
-				TArray<FHitResult> outHits;
-				World->LineTraceMultiByChannel(outHits, SpawnLocation, vEnd, ECollisionChannel::ECC_Pawn, QueryParams);
-				//UKismetSystemLibrary::LineTraceMulti(GetWorld(), SpawnLocation, vEnd, 
-				//	UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), false,
-				//	TArray<AActor*>(), EDrawDebugTrace::ForDuration, outHits, true);
-
-				// Check that a collision happened
-				if (outHits.Num() > 0)
-				{
-					// Iterate through the hit results
-					for (auto i = outHits.CreateIterator(); i; i++)
-					{
-						// Handler for when LineTrace hits an enemy
-						AEnemy* enemy = Cast<AEnemy>(i->GetActor());
-						if (enemy)
-						{
-							// Handle enemy damage and point additions
-							enemy->TakeDamage(m_fDamage);
-							Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 10;
-
-							// Play blood splat particle
-							if (enemy->m_pBloodParticle != nullptr)
-							{
-								UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), enemy->m_pBloodParticle, i->ImpactPoint, SpawnRotation);
-							}
-						}
-						else // Handler for when LineTrace hits anything else
-						{
-							// If sounds exist then play them
-							if (environmentSounds.Num() > 0)
-							{
-								UGameplayStatics::PlaySoundAtLocation(GetWorld(), environmentSounds[FMath::RandRange(0, environmentSounds.Num() - 1)], Character->GetActorLocation());
-							}
-						}
-					}
-				}
+				// Traces the line shot
+				TraceShot(vSpawnLocation, vEnd, rSpawnRotation);
 			}
 			break;
 		default:
-			// LineTrace in direction of shot and store the first object it hits
-			TArray<FHitResult> outHits;
-			World->LineTraceMultiByChannel(outHits, SpawnLocation, SpawnLocation + (camManager->GetCameraRotation().Vector() * 3000), ECollisionChannel::ECC_Pawn, QueryParams);
-			//UKismetSystemLibrary::LineTraceMulti(GetWorld(), SpawnLocation, SpawnLocation + (camManager->GetCameraRotation().Vector() * 3000), 
-			//	UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), false,
-			//	TArray<AActor*>(), EDrawDebugTrace::ForDuration, outHits, true);
+			// Get straight end
+			FVector vEnd = vSpawnLocation + (camManager->GetCameraRotation().Vector() * 1000);
 
-			// Check that a collision happened
-			if (outHits.Num() > 0)
-			{
-				// Iterate through the hit results
-				for (auto i = outHits.CreateIterator(); i; i++)
-				{
-					// Handler for when LineTrace hits an enemy
-					AEnemy* enemy = Cast<AEnemy>(i->GetActor());
-					if (enemy)
-					{
-						// Handle enemy damage and point additions
-						enemy->TakeDamage(m_fDamage);
-						Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 10;
-
-						// Play blood splat particle
-						if (enemy->m_pBloodParticle != nullptr)
-						{
-							UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), enemy->m_pBloodParticle, i->ImpactPoint, SpawnRotation);
-						}
-						break;
-					}
-					else // Handler for when LineTrace hits anything else
-					{
-						// If sounds exist then play them
-						if (environmentSounds.Num() > 0)
-						{
-							UGameplayStatics::PlaySoundAtLocation(GetWorld(), environmentSounds[FMath::RandRange(0, environmentSounds.Num() - 1)], Character->GetActorLocation());
-						}
-					}
-				}
-			}
+			// Traces the line shot
+			TraceShot(vSpawnLocation, vEnd, rSpawnRotation);
 			break;
 		}
 		// Decrease ammo count when shot is successful
-		Character->m_pEquippedWeapon->m_iCurrentAmmo = Character->m_pEquippedWeapon->m_iCurrentAmmo - 1;
+		m_pCharacter->m_pEquippedWeapon->m_iCurrentAmmo = m_pCharacter->m_pEquippedWeapon->m_iCurrentAmmo - 1;
 	}
 	
 	// Try and play the sound if specified
-	if (FireSound != nullptr)
+	if (m_pFireSound != nullptr)
 	{
-		UGameplayStatics::PlaySoundAtLocation(this, FireSound, Character->GetActorLocation());
-	}
-	
-	// Try and play a firing animation if specified
-	if (FireAnimation != nullptr)
-	{
-		// Get the animation object for the arms mesh
-		UAnimInstance* AnimInstance = Character->GetMesh1P()->GetAnimInstance();
-		if (AnimInstance != nullptr)
-		{
-			AnimInstance->Montage_Play(FireAnimation, 1.f);
-		}
+		UGameplayStatics::PlaySoundAtLocation(this, m_pFireSound, m_pCharacter->GetActorLocation());
 	}
 
 	// Try to play the particle effect if specified
-	if (MuzzleFlash != nullptr)
+	if (m_pMuzzleFlash != nullptr)
 	{
-		APlayerController* PlayerController = Cast<APlayerController>(Character->GetController());
+		APlayerController* PlayerController = Cast<APlayerController>(m_pCharacter->GetController());
 		const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-		const FVector SpawnLocation = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(MuzzleOffset);
-		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), MuzzleFlash, SpawnLocation, SpawnRotation);
+		const FVector SpawnLocation = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(m_vMuzzleOffset);
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pMuzzleFlash, SpawnLocation, SpawnRotation);
+	}
+}
+
+void UTP_WeaponComponent::TraceShot(FVector a_vStart, FVector a_vEnd, FRotator a_rRotation)
+{
+	// Get player controller
+	APlayerController* PlayerController = Cast<APlayerController>(m_pCharacter->GetController());
+
+	// Set the query params to ignore self
+	FCollisionQueryParams pQueryParams;
+	pQueryParams.AddIgnoredActor(PlayerController);
+
+	// LineTrace in direction of shot and store the first object it hits
+	TArray<FHitResult> outHits;
+	GetWorld()->LineTraceMultiByChannel(outHits, a_vStart, a_vEnd, ECollisionChannel::ECC_Pawn, pQueryParams);
+	//UKismetSystemLibrary::LineTraceMulti(GetWorld(), SpawnLocation, vEnd, 
+	//	UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), false,
+	//	TArray<AActor*>(), EDrawDebugTrace::ForDuration, outHits, true);
+
+	// Check that a collision happened
+	if (outHits.Num() > 0)
+	{
+		// Iterate through the hit results
+		for (auto i = outHits.CreateIterator(); i; i++)
+		{
+			// Handler for when LineTrace hits an enemy
+			AEnemy* enemy = Cast<AEnemy>(i->GetActor());
+			if (enemy)
+			{
+				// Handle enemy damage and point additions
+				enemy->TakeDamage(m_fDamage);
+				Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 10;
+
+				// Play blood splat particle
+				if (enemy->m_pBloodParticle != nullptr)
+				{
+					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), enemy->m_pBloodParticle, i->ImpactPoint, a_rRotation);
+				}
+				break;
+			}
+			else // Handler for when LineTrace hits anything else
+			{
+				// If sounds exist then play them
+				if (m_pEnvironmentSounds.Num() > 0)
+				{
+					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pEnvironmentSounds[FMath::RandRange(0, m_pEnvironmentSounds.Num() - 1)], m_pCharacter->GetActorLocation());
+				}
+			}
+		}
 	}
 }
 
 void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
-	if(Character != nullptr)
+	if(m_pCharacter != nullptr)
 	{
 		// Unregister from the OnUseItem Event
-		Character->OnUseItem.RemoveDynamic(this, &UTP_WeaponComponent::Fire);
+		m_pCharacter->OnUseItem.RemoveDynamic(this, &UTP_WeaponComponent::Fire);
 	}
 }
 
 void UTP_WeaponComponent::AttachWeapon(ASurvivalShooterCharacter* TargetCharacter)
 {
-	Character = TargetCharacter;
-	if(Character != nullptr)
+	m_pCharacter = TargetCharacter;
+	if(m_pCharacter != nullptr)
 	{
 		// Attach the weapon to the First Person Character
 		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
@@ -215,10 +182,10 @@ void UTP_WeaponComponent::AttachWeapon(ASurvivalShooterCharacter* TargetCharacte
 			break;
 		}
 
-		GetOwner()->AttachToComponent(Character->GetMesh1P(),AttachmentRules, nSocketName);
+		GetOwner()->AttachToComponent(m_pCharacter->GetMesh1P(),AttachmentRules, nSocketName);
 
 		// Register so that Fire is called every time the character tries to use the item being held
-		Character->OnUseItem.AddDynamic(this, &UTP_WeaponComponent::Fire);
+		m_pCharacter->OnUseItem.AddDynamic(this, &UTP_WeaponComponent::Fire);
 	}
 }
 

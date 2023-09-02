@@ -53,11 +53,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = FX)
 	UNiagaraSystem* m_pBloodParticle;
 
-	// Returns the enemy attack montage
-	UAnimMontage* GetAttackMontage();
-
 	// Initiates a melee attack
 	void MeleeAttack();
+
+	void GenerateHitSphere(FVector a_vLocation, float a_fRadius, float a_fDamage, bool a_bDebug = false);
 
 	// Enemy Fields for Combat and Health
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -71,6 +70,10 @@ public:
 	// Method for handling enemy deaths/resets
 	void Reset();
 	void Die();
+
+	// Event handler for montage notifies
+	UFUNCTION()
+	void HandleOnMontageNotifyBegin(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointPayload);
 
 	// Event handler for montage endings
 	UFUNCTION()

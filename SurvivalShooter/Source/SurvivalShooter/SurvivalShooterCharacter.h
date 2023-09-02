@@ -94,10 +94,10 @@ public:
 
 	// Public fields
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	float health = 100.0f;
+	float m_fHealth = 100.0f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool canInteract = false;
+	bool m_bCanInteract = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString m_sClosestInteractable = "";
@@ -113,6 +113,9 @@ public:
 
 	// Method for swapping weapons
 	void SwapWeapons();
+
+	// Method for buying weapons
+	void BuyWeapon(FString a_sWeapon);
 
 	// Method for handling damage
 	void TakeDamage(float a_fDamage);

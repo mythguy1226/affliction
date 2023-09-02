@@ -21,5 +21,5 @@ class SURVIVALSHOOTER_API UBTT_MeleeAttack : public UBTTask_BlackboardBase
 public:
 	UBTT_MeleeAttack(FObjectInitializer const& a_pObjectInitializer);
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& a_pOwnerComp, uint8* a_pNodeMemory);
-	bool attackMontageFinished(AEnemy* a_pEnemy);
+	bool AttackMontageFinished(AEnemy* a_pEnemy);
 };

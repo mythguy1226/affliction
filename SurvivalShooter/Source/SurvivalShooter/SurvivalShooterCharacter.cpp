@@ -77,53 +77,7 @@ void ASurvivalShooterCharacter::Tick(float m_fDeltaTime)
 		// Check if weapon is full auto
 		if (m_pEquippedWeapon->m_bFullAuto && m_bHoldingPrimaryAction)
 		{
-			// Trigger the OnItemUsed Event
-			OnUseItem.Broadcast();
-
-			// Interrupt reload sequence
-			GetMesh1P()->GetAnimInstance()->Montage_Stop(0.2f, m_pReloadMontage);
-			GetMesh1P()->GetAnimInstance()->Montage_Stop(0.2f, m_pRifleReloadMontage);
-
-			// Conditions for weapon-type
-			switch (m_pEquippedWeapon->m_eWeaponType)
-			{
-			case EWeaponType::WT_Pistol:
-				// Try and play a firing animation if specified
-				if (m_pShootMontage != nullptr)
-				{
-					// Get the animation object for the arms mesh
-					UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-					if (AnimInstance != nullptr)
-					{
-						AnimInstance->Montage_Play(m_pShootMontage, 1.f);
-					}
-				}
-				break;
-			case EWeaponType::WT_Rifle:
-				// Try and play a firing animation if specified
-				if (m_pRifleShootMontage != nullptr)
-				{
-					// Get the animation object for the arms mesh
-					UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-					if (AnimInstance != nullptr)
-					{
-						AnimInstance->Montage_Play(m_pRifleShootMontage, 1.f);
-					}
-				}
-				break;
-			default:
-				// Try and play a firing animation if specified
-				if (m_pShootMontage != nullptr)
-				{
-					// Get the animation object for the arms mesh
-					UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-					if (AnimInstance != nullptr)
-					{
-						AnimInstance->Montage_Play(m_pShootMontage, 1.f);
-					}
-				}
-				break;
-			}
+			OnPrimaryAction();
 		}
 
 		// Reset the timer
@@ -173,7 +127,7 @@ void ASurvivalShooterCharacter::EquipWeapon(FString a_sWeapon)
 	m_pEquippedWeapon->m_iTotalAmmo = Cast<AWeapon>(pWeapon)->m_iMaxAmmo;
 	
 	// Attach the weapon to the player
-	UTP_WeaponComponent* pWeaponComp = Cast<AWeapon>(pWeapon)->WeaponComponent;
+	UTP_WeaponComponent* pWeaponComp = Cast<AWeapon>(pWeapon)->m_pWeaponComponent;
 	pWeaponComp->AttachWeapon(this);
 }
 
@@ -216,15 +170,75 @@ void ASurvivalShooterCharacter::SwapWeapons()
 	}
 }
 
+void ASurvivalShooterCharacter::BuyWeapon(FString a_sWeapon)
+{
+	// Return if player has the rifle already
+	if (m_pEquippedWeapon->m_sWeaponName == a_sWeapon)
+	{
+		// Refill equipped weapon ammo
+		m_pEquippedWeapon->m_iTotalAmmo = m_pEquippedWeapon->m_iMaxAmmo;
+		m_pEquippedWeapon->m_iCurrentAmmo = m_pEquippedWeapon->m_iClipSize;
+		return;
+	}
+	if (m_pOffHandWeapon != nullptr)
+	{
+		if (m_pOffHandWeapon->m_sWeaponName == a_sWeapon)
+		{
+			return;
+		}
+	}
+
+	// Equip the rifle and hide the pistol
+	if (m_pOffHandWeapon == nullptr)
+	{
+		// Swap weapons
+		m_pOffHandWeapon = m_pEquippedWeapon;
+		m_pEquippedWeapon->GetMesh()->SetVisibility(false);
+		EquipWeapon(a_sWeapon);
+	}
+	else
+	{
+		// Destroy weapon being switched out
+		m_pEquippedWeapon->Destroy();
+		m_pEquippedWeapon = nullptr;
+
+		// Equip the new weapon
+		EquipWeapon(a_sWeapon);
+	}
+
+	// Try to play the swap sound
+	if (m_pWeaponSwapSound != nullptr)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pWeaponSwapSound, GetActorLocation());
+	}
+
+	// Try to play the particle effect if specified
+	if (m_pGunSwitchParticle != nullptr)
+	{
+		// Get Rotation
+		APlayerController* PlayerController = Cast<APlayerController>(GetController());
+		const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+
+		// Get Location from offset
+		FVector vOffset = (GetActorForwardVector() * 10) + (GetActorRightVector() * 10) + FVector(0.0f, 0.0f, 50.0f);
+		const FVector SpawnLocation = GetActorLocation() + vOffset;
+
+		// Spawn the particle
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
+	}
+}
+
 void ASurvivalShooterCharacter::TakeDamage(float a_fDamage)
 {
 	// Take damage
-	health -= a_fDamage;
+	m_fHealth -= a_fDamage;
 
 	// Death handling
-	if (health <= 0)
+	if (m_fHealth <= 0)
 	{
+		// Restart world and reset points
 		UGameplayStatics::OpenLevel(GetWorld(), FName(GetWorld()->GetName()), true);
+		Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints = 0;
 	}
 }
 
@@ -236,81 +250,46 @@ void ASurvivalShooterCharacter::Reload()
 		// Check that there is ammo left
 		if (m_pEquippedWeapon->m_iTotalAmmo > 0)
 		{
+			// Empty Anim Montage that'll be assigned below
+			UAnimMontage* pReloadMontage = nullptr;
+
 			// Get correct weapon type
 			switch (m_pEquippedWeapon->m_eWeaponType)
 			{
 			case EWeaponType::WT_Pistol:
 				// Play reload montage
 				if (m_pReloadMontage != nullptr)
-				{
-					// Get the animation object for the arms mesh
-					UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-					if (AnimInstance != nullptr)
-					{
-						AnimInstance->Montage_Play(m_pReloadMontage, 1.f);
-
-						// Try and play the sound if specified
-						if (m_pEquippedWeapon->m_pReloadSound != nullptr)
-						{
-							UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pEquippedWeapon->m_pReloadSound, GetActorLocation());
-						}
-					}
-				}
+					pReloadMontage = m_pReloadMontage;
 				break;
 			case EWeaponType::WT_Rifle:
 				// Play reload montage
 				if (m_pRifleReloadMontage != nullptr)
-				{
-					// Get the animation object for the arms mesh
-					UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-					if (AnimInstance != nullptr)
-					{
-						AnimInstance->Montage_Play(m_pRifleReloadMontage, 1.f);
-
-						// Try and play the sound if specified
-						if (m_pEquippedWeapon->m_pReloadSound != nullptr)
-						{
-							UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pEquippedWeapon->m_pReloadSound, GetActorLocation());
-						}
-					}
-				}
+					pReloadMontage = m_pRifleReloadMontage;
 				break;
 			case EWeaponType::WT_Shotgun:
 				// Play reload montage
 				if (m_pShotgunReloadMontage != nullptr)
-				{
-					// Get the animation object for the arms mesh
-					UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-					if (AnimInstance != nullptr)
-					{
-						AnimInstance->Montage_Play(m_pShotgunReloadMontage, 1.f);
-
-						// Try and play the sound if specified
-						if (m_pEquippedWeapon->m_pReloadSound != nullptr)
-						{
-							UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pEquippedWeapon->m_pReloadSound, GetActorLocation());
-						}
-					}
-				}
+					pReloadMontage = m_pShotgunReloadMontage;
 				break;
 			default:
 				// Play reload montage
 				if (m_pReloadMontage != nullptr)
-				{
-					// Get the animation object for the arms mesh
-					UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-					if (AnimInstance != nullptr)
-					{
-						AnimInstance->Montage_Play(m_pReloadMontage, 1.f);
-
-						// Try and play the sound if specified
-						if (m_pEquippedWeapon->m_pReloadSound != nullptr)
-						{
-							UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pEquippedWeapon->m_pReloadSound, GetActorLocation());
-						}
-					}
-				}
+					pReloadMontage = m_pReloadMontage;
 				break;
+			}
+
+			// Get the animation object for the arms mesh
+			UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
+			if (AnimInstance != nullptr)
+			{
+				// Play reload montage
+				AnimInstance->Montage_Play(pReloadMontage, 1.f);
+
+				// Try and play the sound if specified
+				if (m_pEquippedWeapon->m_pReloadSound != nullptr)
+				{
+					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pEquippedWeapon->m_pReloadSound, GetActorLocation());
+				}
 			}
 		}
 	}
@@ -319,7 +298,7 @@ void ASurvivalShooterCharacter::Reload()
 void ASurvivalShooterCharacter::Interact()
 {
 	// Ensure they can interact
-	if (canInteract)
+	if (m_bCanInteract)
 	{
 		// Null check the door
 		if (m_pInteractable == nullptr)
@@ -368,153 +347,11 @@ void ASurvivalShooterCharacter::Interact()
 		}
 		if (m_pInteractable->GetName().Contains("RifleShop"))
 		{
-			// Return if player has the rifle already
-			if (m_pEquippedWeapon->m_sWeaponName == "Rifle")
-			{
-				return;
-			}
-			if (m_pOffHandWeapon != nullptr)
-			{
-				if (m_pOffHandWeapon->m_sWeaponName == "Rifle")
-				{
-					return;
-				}
-			}
-
-			// Equip the rifle and hide the pistol
-			if (m_pOffHandWeapon == nullptr)
-			{
-				// Swap weapons
-				m_pOffHandWeapon = m_pEquippedWeapon;
-				m_pEquippedWeapon->GetMesh()->SetVisibility(false);
-				EquipWeapon("Rifle");
-
-				// Try to play the swap sound
-				if (m_pWeaponSwapSound != nullptr)
-				{
-					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pWeaponSwapSound, GetActorLocation());
-				}
-
-				// Try to play the particle effect if specified
-				if (m_pGunSwitchParticle != nullptr)
-				{
-					// Get Rotation
-					APlayerController* PlayerController = Cast<APlayerController>(GetController());
-					const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-
-					// Get Location from offset
-					FVector vOffset = (GetActorForwardVector() * 10) + (GetActorRightVector() * 10) + FVector(0.0f, 0.0f, 50.0f);
-					const FVector SpawnLocation = GetActorLocation() + vOffset;
-
-					// Spawn the particle
-					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
-				}
-			}
-			else
-			{
-				// Destroy weapon being switched out
-				m_pEquippedWeapon->Destroy();
-				m_pEquippedWeapon = nullptr;
-
-				// Equip the new weapon
-				EquipWeapon("Rifle");
-
-				// Try to play the swap sound
-				if (m_pWeaponSwapSound != nullptr)
-				{
-					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pWeaponSwapSound, GetActorLocation());
-				}
-
-				// Try to play the particle effect if specified
-				if (m_pGunSwitchParticle != nullptr)
-				{
-					// Get Rotation
-					APlayerController* PlayerController = Cast<APlayerController>(GetController());
-					const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-
-					// Get Location from offset
-					FVector vOffset = (GetActorForwardVector() * 10) + (GetActorRightVector() * 10) + FVector(0.0f, 0.0f, 50.0f);
-					const FVector SpawnLocation = GetActorLocation() + vOffset;
-
-					// Spawn the particle
-					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
-				}
-			}
+			BuyWeapon("Rifle");
 		}
 		if (m_pInteractable->GetName().Contains("ShotgunShop"))
 		{
-			// Return if player has the shotgun already
-			if (m_pEquippedWeapon->m_sWeaponName == "Shotgun")
-			{
-				return;
-			}
-			if (m_pOffHandWeapon != nullptr)
-			{
-				if (m_pOffHandWeapon->m_sWeaponName == "Shotgun")
-				{
-					return;
-				}
-			}
-
-			// Equip the shotgun and hide the pistol
-			if (m_pOffHandWeapon == nullptr)
-			{
-				// Swap weapons
-				m_pOffHandWeapon = m_pEquippedWeapon;
-				m_pEquippedWeapon->GetMesh()->SetVisibility(false);
-				EquipWeapon("Shotgun");
-
-				// Try to play the swap sound
-				if (m_pWeaponSwapSound != nullptr)
-				{
-					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pWeaponSwapSound, GetActorLocation());
-				}
-
-				// Try to play the particle effect if specified
-				if (m_pGunSwitchParticle != nullptr)
-				{
-					// Get Rotation
-					APlayerController* PlayerController = Cast<APlayerController>(GetController());
-					const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-
-					// Get Location from offset
-					FVector vOffset = (GetActorForwardVector() * 10) + (GetActorRightVector() * 10) + FVector(0.0f, 0.0f, 50.0f);
-					const FVector SpawnLocation = GetActorLocation() + vOffset;
-
-					// Spawn the particle
-					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
-				}
-			}
-			else
-			{
-				// Destroy weapon being switched out
-				m_pEquippedWeapon->Destroy();
-				m_pEquippedWeapon = nullptr;
-
-				// Equip the new weapon
-				EquipWeapon("Shotgun");
-
-				// Try to play the swap sound
-				if (m_pWeaponSwapSound != nullptr)
-				{
-					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pWeaponSwapSound, GetActorLocation());
-				}
-
-				// Try to play the particle effect if specified
-				if (m_pGunSwitchParticle != nullptr)
-				{
-					// Get Rotation
-					APlayerController* PlayerController = Cast<APlayerController>(GetController());
-					const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-
-					// Get Location from offset
-					FVector vOffset = (GetActorForwardVector() * 10) + (GetActorRightVector() * 10) + FVector(0.0f, 0.0f, 50.0f);
-					const FVector SpawnLocation = GetActorLocation() + vOffset;
-
-					// Spawn the particle
-					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
-				}
-			}
+			BuyWeapon("Shotgun");
 		}
 	}
 
@@ -577,57 +414,39 @@ void ASurvivalShooterCharacter::OnPrimaryAction()
 	// Set holding boolean
 	m_bHoldingPrimaryAction = true;
 
+	// Empty Anim Montage will be assigned below
+	UAnimMontage* pShootMontage = nullptr;
+
 	// Conditions for weapon-type
 	switch (m_pEquippedWeapon->m_eWeaponType)
 	{
 	case EWeaponType::WT_Pistol:
-		// Try and play a firing animation if specified
+		// Pistol Shot
 		if (m_pShootMontage != nullptr)
-		{
-			// Get the animation object for the arms mesh
-			UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-			if (AnimInstance != nullptr)
-			{
-				AnimInstance->Montage_Play(m_pShootMontage, 1.f);
-			}
-		}
+			pShootMontage = m_pShootMontage;
 		break;
 	case EWeaponType::WT_Rifle:
-		// Try and play a firing animation if specified
+		// Rifle Shot
 		if (m_pRifleShootMontage != nullptr)
-		{
-			// Get the animation object for the arms mesh
-			UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-			if (AnimInstance != nullptr)
-			{
-				AnimInstance->Montage_Play(m_pRifleShootMontage, 1.f);
-			}
-		}
+			pShootMontage = m_pRifleShootMontage;
 		break;
 	case EWeaponType::WT_Shotgun:
-		// Try and play a firing animation if specified
+		// Shotgun Shot
 		if (m_pShotgunShootMontage != nullptr && m_pEquippedWeapon->m_iCurrentAmmo > 0)
-		{
-			// Get the animation object for the arms mesh
-			UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-			if (AnimInstance != nullptr)
-			{
-				AnimInstance->Montage_Play(m_pShotgunShootMontage, 1.f);
-			}
-		}
+			pShootMontage = m_pShotgunShootMontage;
 		break;
 	default:
-		// Try and play a firing animation if specified
+		// Pistol Shot
 		if (m_pShootMontage != nullptr)
-		{
-			// Get the animation object for the arms mesh
-			UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
-			if (AnimInstance != nullptr)
-			{
-				AnimInstance->Montage_Play(m_pShootMontage, 1.f);
-			}
-		}
+			pShootMontage = m_pShootMontage;
 		break;
+	}
+
+	// Get the animation object for the arms mesh
+	UAnimInstance* AnimInstance = GetMesh1P()->GetAnimInstance();
+	if (AnimInstance != nullptr)
+	{
+		AnimInstance->Montage_Play(pShootMontage, 1.f);
 	}
 }
 

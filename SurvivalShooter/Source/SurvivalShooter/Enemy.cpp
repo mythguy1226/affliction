@@ -23,8 +23,13 @@ void AEnemy::BeginPlay()
 	m_pEnemyManager = Cast<AEnemyManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AEnemyManager::StaticClass()));
 	m_vWorldSpawnLocation = GetActorLocation();
 
-	// Bind Events
-	GetMesh()->GetAnimInstance()->OnMontageEnded.AddDynamic(this, &AEnemy::HandleOnMontageEnded);
+	// Bind Anim Events
+	UAnimInstance* pAnimInst = GetMesh()->GetAnimInstance();
+	if (pAnimInst != nullptr)
+	{
+		pAnimInst->OnPlayMontageNotifyBegin.AddDynamic(this, &AEnemy::HandleOnMontageNotifyBegin);
+		pAnimInst->OnMontageEnded.AddDynamic(this, &AEnemy::HandleOnMontageEnded);
+	}
 }
 
 // Called every frame
@@ -41,17 +46,6 @@ void AEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
-// Returns the attack montage
-UAnimMontage* AEnemy::GetAttackMontage()
-{
-	// Check that montage exists
-	if (m_pAttackMontage != nullptr)
-	{
-		return m_pAttackMontage;
-	}
-	return nullptr;
-}
-
 // Play enemy attack sequence for melee ranges
 void AEnemy::MeleeAttack()
 {
@@ -64,20 +58,57 @@ void AEnemy::MeleeAttack()
 		{
 			AnimInstance->Montage_Play(m_pAttackMontage, 1.f);
 
-			// Get the player instance
-			APlayerController* pController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-			ASurvivalShooterCharacter* player = Cast<ASurvivalShooterCharacter>(pController->GetPawn());
-
-			// If player reference is valid then deal damage
-			if (player)
-			{
-				player->TakeDamage(10.0f);
-			}
-
 			// If sounds exist then play them
 			if (m_pAttackSounds.Num() > 0)
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pAttackSounds[FMath::RandRange(0, m_pAttackSounds.Num() - 1)], GetActorLocation());
+			}
+		}
+	}
+}
+
+void AEnemy::GenerateHitSphere(FVector a_vLocation, float a_fRadius, float a_fDamage, bool a_bDebug)
+{
+	// Init hit results
+	TArray<FHitResult> outHits;
+	TArray<AActor*> ignoredActors;
+	ignoredActors.Add(this);
+
+	// Use Sphere Shape
+	FCollisionShape sphereShape;
+	sphereShape.ShapeType = ECollisionShape::Sphere;
+	sphereShape.SetSphere(a_fRadius);
+
+	// Set the query params
+	FCollisionQueryParams queryParams;
+	queryParams.AddIgnoredActor(this);
+
+	// Sweep Trace at typical contact point of swing
+	GetWorld()->SweepMultiByChannel(outHits, a_vLocation, a_vLocation, FQuat::Identity, ECollisionChannel::ECC_Pawn, sphereShape, queryParams);
+
+	// Debug Trace to show visual representation
+	if (a_bDebug)
+	{
+		// Sweep Trace at typical contact point of swing with debugging visuals
+		UKismetSystemLibrary::SphereTraceMulti(GetWorld(), a_vLocation, a_vLocation,
+			a_fRadius,
+			UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), true, ignoredActors,
+			EDrawDebugTrace::ForDuration, outHits, true, FColor::Red);
+	}
+
+	// Check that a collision happened
+	if (outHits.Num() > 0)
+	{
+		// Iterate through the hit results
+		for (auto i = outHits.CreateIterator(); i; i++)
+		{
+			// Try to cast to the player
+			ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(i->GetActor());
+			if (pPlayer) // Continue if valid
+			{
+				// Deal damage
+				pPlayer->TakeDamage(a_fDamage);
+				break;
 			}
 		}
 	}
@@ -120,7 +151,7 @@ void AEnemy::Reset()
 void AEnemy::Die()
 {
 	// Add points for kill
-	Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 100;
+	Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 50;
 
 	// If sounds exist then play them
 	if (m_pDeathSounds.Num() > 0)
@@ -132,6 +163,20 @@ void AEnemy::Die()
 	GetMesh()->GetAnimInstance()->Montage_Play(m_pDeathMontage, 1.f);
 }
 
+void AEnemy::HandleOnMontageNotifyBegin(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointPayload)
+{
+	// Generate a hit sphere here to check for attack collisions
+	if (NotifyName.ToString().Contains("CheckAttackCollisions"))
+	{
+		// Sphere Location
+		FVector vOffset = (GetActorForwardVector() * 80.0f) + FVector(0.0f, 0.0f, 25.0f);
+		FVector pLocation = GetActorLocation() + vOffset;
+
+		// Generate a hit sphere at the hit location
+		GenerateHitSphere(pLocation, 30.0f, 10.0f);
+	}
+}
+
 void AEnemy::HandleOnMontageEnded(UAnimMontage* Montage, bool Interrupted)
 {
 	// Check if the montage is the reload montage
@@ -139,16 +184,18 @@ void AEnemy::HandleOnMontageEnded(UAnimMontage* Montage, bool Interrupted)
 	{
 		Reset();
 
-		// Update Manager
+		// Update Enemy Manager
 		m_pEnemyManager->m_iWaveKills++;
-		
+
 		if (m_pEnemyManager->m_iWaveKills >= m_pEnemyManager->m_iCurrentWaveSize)
 		{
+			// Begin the next wave and update params
 			m_pEnemyManager->UpdateWaveParameters();
 			m_pEnemyManager->StartNextWave();
 		}
 		else
 		{
+			// Try to spawn more enemies
 			m_pEnemyManager->SpawnMoreEnemies();
 		}
 	}

@@ -12,7 +12,7 @@ AWeapon::AWeapon()
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Weapon_Mesh");
 	Mesh->SetupAttachment(RootComponent);
 
-	WeaponComponent = CreateDefaultSubobject<UTP_WeaponComponent>("Weapon_Component");
+	m_pWeaponComponent = CreateDefaultSubobject<UTP_WeaponComponent>("Weapon_Component");
 }
 
 UStaticMeshComponent* AWeapon::GetMesh()
@@ -25,12 +25,13 @@ void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	WeaponComponent->FireSound = FireSound;
-	WeaponComponent->EmptySound = EmptySound;
-	WeaponComponent->environmentSounds = environmentSounds;
-	WeaponComponent->MuzzleFlash = MuzzleFlash;
-	WeaponComponent->m_eWeaponType = m_eWeaponType;
-	WeaponComponent->m_fDamage = m_fDamage;
+	m_pWeaponComponent->m_pFireSound = m_pFireSound;
+	m_pWeaponComponent->m_pEmptySound = m_pEmptySound;
+	m_pWeaponComponent->m_pEnvironmentSounds = m_pEnvironmentSounds;
+	m_pWeaponComponent->m_pMuzzleFlash = m_pMuzzleFlash;
+	m_pWeaponComponent->m_eWeaponType = m_eWeaponType;
+	m_pWeaponComponent->m_fDamage = m_fDamage;
+	m_pWeaponComponent->m_vMuzzleOffset = m_vMuzzleOffset;
 }
 
 // Called every frame

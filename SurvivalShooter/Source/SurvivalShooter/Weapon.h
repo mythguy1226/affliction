@@ -19,26 +19,26 @@ public:
 
 	/** Sound to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound)
-	USoundBase* FireSound;
+	USoundBase* m_pFireSound;
 
 	/** Sound to play each time we can't fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound)
-	USoundBase* EmptySound;
+	USoundBase* m_pEmptySound;
 
 	/* Gets the sound used for reloading */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound")
 	USoundBase* m_pReloadSound;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound)
-	TArray<USoundBase*> environmentSounds;
+	TArray<USoundBase*> m_pEnvironmentSounds;
 
 	/** Gun muzzle's offset from the characters location */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-	FVector MuzzleOffset = FVector(100.0f, 0.0f, 10.0f);
+	FVector m_vMuzzleOffset = FVector(100.0f, 0.0f, 10.0f);
 
 	/** Gun muzzle's particle */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SFX)
-	UNiagaraSystem* MuzzleFlash;
+	UNiagaraSystem* m_pMuzzleFlash;
 
 	/** Gun Type */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -63,7 +63,7 @@ public:
 	UStaticMeshComponent* GetMesh();
 
 	// Reference to weapon component
-	UTP_WeaponComponent* WeaponComponent;
+	UTP_WeaponComponent* m_pWeaponComponent;
 
 	// Ammo Fields
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)

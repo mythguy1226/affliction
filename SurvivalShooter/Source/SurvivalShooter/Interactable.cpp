@@ -40,7 +40,7 @@ void AInteractable::OnCapsuleBeginOverlap(UPrimitiveComponent* OverlappedCompone
 {
 	// Cast to player and enable interact
 	ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(OtherActor);
-	pPlayer->canInteract = true;
+	pPlayer->m_bCanInteract = true;
 
 	// Set proper interact values
 	pPlayer->m_sInteractMessage = m_sInteractMessage;
@@ -51,6 +51,6 @@ void AInteractable::OnCapsuleEndOverlap(UPrimitiveComponent* OverlappedComp, AAc
 {
 	// Cast to player and disable interact
 	ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(OtherActor);
-	pPlayer->canInteract = false;
+	pPlayer->m_bCanInteract = false;
 }
 

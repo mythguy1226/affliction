@@ -10,8 +10,8 @@
 UENUM(BlueprintType)
 enum class EWeaponType : uint8 {
 	WT_Pistol      UMETA(DisplayName = "Pistol"),
-	WT_Rifle        UMETA(DisplayName = "Rifle"),
-	WT_Shotgun       UMETA(DisplayName = "Shotgun"),
+	WT_Rifle       UMETA(DisplayName = "Rifle"),
+	WT_Shotgun     UMETA(DisplayName = "Shotgun"),
 };
 
 class ASurvivalShooterCharacter;
@@ -23,25 +23,22 @@ class SURVIVALSHOOTER_API UTP_WeaponComponent : public UActorComponent
 
 public:
 	/** Sound to play each time we fire */
-	USoundBase* FireSound;
+	USoundBase* m_pFireSound;
 
 	/** Sound to play each time we can't fire */
-	USoundBase* EmptySound;
+	USoundBase* m_pEmptySound;
 
 	/** Sound to play each time we can't fire */
-	USoundBase* zombieHitSound;
+	USoundBase* m_pZombieHitSound;
 
 	/** Sounds to play when hitting the environment */
-	TArray<USoundBase*> environmentSounds;
-
-	/** AnimMontage to play each time we fire */
-	UAnimMontage* FireAnimation;
+	TArray<USoundBase*> m_pEnvironmentSounds;
 
 	/** Gun muzzle's offset from the characters location */
-	FVector MuzzleOffset;
+	FVector m_vMuzzleOffset;
 
 	/** Gun muzzle's particle */
-	UNiagaraSystem* MuzzleFlash;
+	UNiagaraSystem* m_pMuzzleFlash;
 
 	/** Weapon Type */
 	EWeaponType m_eWeaponType;
@@ -60,6 +57,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 	void Fire();
 
+	// Helper method for tracing shots
+	void TraceShot(FVector a_vStart, FVector a_vEnd, FRotator a_rRotation);
+
 protected:
 	/** Ends gameplay for this component. */
 	UFUNCTION()
@@ -68,5 +68,5 @@ protected:
 
 private:
 	/** The Character holding this weapon*/
-	ASurvivalShooterCharacter* Character;
+	ASurvivalShooterCharacter* m_pCharacter;
 };

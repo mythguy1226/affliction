@@ -36,6 +36,8 @@ void AEnemyManager::BeginPlay()
 		ModifyWaveHealth();
 	}, 3, false);
 
+	// Init wave size tracker
+	m_iCurrentWaveSize = m_iFirstWaveCount;
 }
 
 // Called every frame
@@ -65,22 +67,8 @@ void AEnemyManager::SpawnFirstWave()
 			// Cast actor to enemy
 			AEnemy* curEnemy = Cast<AEnemy>(m_aEnemies[i]);
 
-			// Disable collisions temporarily in case an enemy tries to spawn within close proximity to one another
-			// In the midst of this, spawn the enemies
-			curEnemy->SetActorEnableCollision(false);
-
-			// Get the next unlocked spawn from the list
-			AEnemySpawn* pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
-			while (pSpawn->m_bIsLocked) // Loop until you find an unlocked spawn
-			{
-				pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
-			}
-
 			// Spawn the enemy
-			curEnemy->TeleportTo(pSpawn->GetActorLocation(), curEnemy->GetActorRotation());
-			curEnemy->SetActorEnableCollision(true);
-
-			curEnemy->m_bInCombat = true;
+			SpawnEnemy(curEnemy);
 
 			// Update spawn count
 			spawnCount++;
@@ -94,21 +82,28 @@ void AEnemyManager::UpdateWaveParameters()
 	m_iCurrentWave += 1;
 	m_iWaveKills = 0;
 
-	// Increase Wave Size
+	// Update Wave Size and arena max
 	m_iCurrentWaveSize += 4;
 	m_iMaxEnemiesInArena += 2;
+	if (m_iMaxEnemiesInArena >= m_aEnemies.Num())
+	{
+		m_iMaxEnemiesInArena = m_aEnemies.Num() - 2;
+	}
 
 	// Increase Wave Health
 	m_fWaveHealth += 10.0f;
 
-	// Update speeds and cap the maxs and mins
-	if (m_fGlobalMaxWalkSpeed < 400.0f)
+	// Update max and min walk speeds
+	m_fGlobalMaxWalkSpeed += 50.0f;
+	if (m_fGlobalMaxWalkSpeed > 400.0f)
 	{
-		m_fGlobalMaxWalkSpeed += 200.0f;
+		m_fGlobalMaxWalkSpeed = 400.0f;
 	}
-	if (m_fGlobalMinWalkSpeed < 350.0f)
+
+	m_fGlobalMinWalkSpeed += 20.0f;
+	if (m_fGlobalMinWalkSpeed > 350.0f)
 	{
-		m_fGlobalMinWalkSpeed += 100.0f;
+		m_fGlobalMinWalkSpeed = 350.0f;
 	}
 }
 
@@ -120,7 +115,7 @@ void AEnemyManager::StartNextWave()
 	// Iterate through all enemies
 	for (int i = 0; i < m_aEnemies.Num(); i++)
 	{
-		// Break the loop if target enemies has been reached
+		// Break the loop if target enemies has been reached or if full wave has been spawned
 		if (spawnCount == m_iMaxEnemiesInArena || spawnCount == m_iCurrentWaveSize)
 		{
 			break;
@@ -129,31 +124,18 @@ void AEnemyManager::StartNextWave()
 		// Cast actor to enemy
 		AEnemy* curEnemy = Cast<AEnemy>(m_aEnemies[i]);
 
+		// Ensure enemy isn't already in combat
 		if (!curEnemy->m_bInCombat)
 		{
-			// Disable collisions temporarily in case an enemy tries to spawn within close proximity to one another
-			// In the midst of this, spawn the enemies
-			curEnemy->SetActorEnableCollision(false);
-
-			// Get the next unlocked spawn from the list
-			AEnemySpawn* pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
-			while (pSpawn->m_bIsLocked) // Loop until you find an unlocked spawn
-			{
-				pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
-			}
-
 			// Spawn the enemy
-			curEnemy->TeleportTo(pSpawn->GetActorLocation(), curEnemy->GetActorRotation());
-			curEnemy->SetActorEnableCollision(true);
-
-			curEnemy->m_bInCombat = true;
+			SpawnEnemy(curEnemy);
 
 			// Update spawn count
 			spawnCount++;
 		}
 	}
 
-	// Update Wave Speeds
+	// Update Wave Speeds and Health
 	ModifyWaveSpeeds();
 	ModifyWaveHealth();
 }
@@ -178,28 +160,34 @@ void AEnemyManager::SpawnMoreEnemies()
 					// Check that enemy isn't already in combat
 					if (!curEnemy->m_bInCombat)
 					{
-						// Disable collisions temporarily in case an enemy tries to spawn within close proximity to one another
-						// In the midst of this, spawn the enemies
-						curEnemy->SetActorEnableCollision(false);
-
-						// Get the next unlocked spawn from the list
-						AEnemySpawn* pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
-						while(pSpawn->m_bIsLocked) // Loop until you find an unlocked spawn
-						{
-							pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
-						}
-
 						// Spawn the enemy
-						curEnemy->TeleportTo(pSpawn->GetActorLocation(), curEnemy->GetActorRotation());
-						curEnemy->SetActorEnableCollision(true);
-
-						curEnemy->m_bInCombat = true;
+						SpawnEnemy(curEnemy);
 						break;
 					}
 				}
 			}
 		}
 	}
+}
+
+void AEnemyManager::SpawnEnemy(AEnemy* a_pEnemy)
+{
+	// Disable collisions temporarily in case an enemy tries to spawn within close proximity to one another
+	// In the midst of this, spawn the enemies
+	a_pEnemy->SetActorEnableCollision(false);
+
+	// Get the next unlocked spawn from the list
+	AEnemySpawn* pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
+	while (pSpawn->m_bIsLocked) // Loop until you find an unlocked spawn
+	{
+		pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
+	}
+
+	// Spawn the enemy
+	a_pEnemy->TeleportTo(pSpawn->GetActorLocation(), a_pEnemy->GetActorRotation());
+	a_pEnemy->SetActorEnableCollision(true);
+
+	a_pEnemy->m_bInCombat = true;
 }
 
 TArray<AEnemy*> AEnemyManager::GetAllEnemiesInCombat()
@@ -223,13 +211,14 @@ TArray<AEnemy*> AEnemyManager::GetAllEnemiesInCombat()
 
 void AEnemyManager::ModifyWaveSpeeds()
 {
-	// Get all enemies currently in combat and update their speeds
-	TArray<AEnemy*> enemiesInCombat = GetAllEnemiesInCombat();
-	for (int i = 0; i < enemiesInCombat.Num(); i++)
+	// Iterate through all enemies
+	for (int i = 0; i < m_aEnemies.Num(); i++)
 	{
-		AEnemy* curEnemy = Cast<AEnemy>(enemiesInCombat[i]);
+		// Cast to enemy
+		AEnemy* pEnemy = Cast<AEnemy>(m_aEnemies[i]);
 
-		curEnemy->GetCharacterMovement()->MaxWalkSpeed = FMath::RandRange(m_fGlobalMinWalkSpeed, m_fGlobalMaxWalkSpeed);
+		// Update speed
+		pEnemy->GetCharacterMovement()->MaxWalkSpeed = FMath::RandRange(m_fGlobalMinWalkSpeed, m_fGlobalMaxWalkSpeed);
 	}
 }
 
