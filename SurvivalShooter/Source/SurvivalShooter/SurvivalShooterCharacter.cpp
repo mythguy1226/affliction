@@ -410,6 +410,36 @@ void ASurvivalShooterCharacter::Interact()
 					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
 				}
 			}
+			else
+			{
+				// Destroy weapon being switched out
+				m_pEquippedWeapon->Destroy();
+				m_pEquippedWeapon = nullptr;
+
+				// Equip the new weapon
+				EquipWeapon("Rifle");
+
+				// Try to play the swap sound
+				if (m_pWeaponSwapSound != nullptr)
+				{
+					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pWeaponSwapSound, GetActorLocation());
+				}
+
+				// Try to play the particle effect if specified
+				if (m_pGunSwitchParticle != nullptr)
+				{
+					// Get Rotation
+					APlayerController* PlayerController = Cast<APlayerController>(GetController());
+					const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+
+					// Get Location from offset
+					FVector vOffset = (GetActorForwardVector() * 10) + (GetActorRightVector() * 10) + FVector(0.0f, 0.0f, 50.0f);
+					const FVector SpawnLocation = GetActorLocation() + vOffset;
+
+					// Spawn the particle
+					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
+				}
+			}
 		}
 		if (m_pInteractable->GetName().Contains("ShotgunShop"))
 		{
@@ -432,6 +462,36 @@ void ASurvivalShooterCharacter::Interact()
 				// Swap weapons
 				m_pOffHandWeapon = m_pEquippedWeapon;
 				m_pEquippedWeapon->GetMesh()->SetVisibility(false);
+				EquipWeapon("Shotgun");
+
+				// Try to play the swap sound
+				if (m_pWeaponSwapSound != nullptr)
+				{
+					UGameplayStatics::PlaySoundAtLocation(GetWorld(), m_pWeaponSwapSound, GetActorLocation());
+				}
+
+				// Try to play the particle effect if specified
+				if (m_pGunSwitchParticle != nullptr)
+				{
+					// Get Rotation
+					APlayerController* PlayerController = Cast<APlayerController>(GetController());
+					const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+
+					// Get Location from offset
+					FVector vOffset = (GetActorForwardVector() * 10) + (GetActorRightVector() * 10) + FVector(0.0f, 0.0f, 50.0f);
+					const FVector SpawnLocation = GetActorLocation() + vOffset;
+
+					// Spawn the particle
+					UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), m_pGunSwitchParticle, SpawnLocation, SpawnRotation);
+				}
+			}
+			else
+			{
+				// Destroy weapon being switched out
+				m_pEquippedWeapon->Destroy();
+				m_pEquippedWeapon = nullptr;
+
+				// Equip the new weapon
 				EquipWeapon("Shotgun");
 
 				// Try to play the swap sound
