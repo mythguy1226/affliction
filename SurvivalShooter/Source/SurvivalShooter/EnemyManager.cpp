@@ -176,11 +176,14 @@ void AEnemyManager::SpawnEnemy(AEnemy* a_pEnemy)
 	// In the midst of this, spawn the enemies
 	a_pEnemy->SetActorEnableCollision(false);
 
+	// Get the closest spawn points to the player
+	TArray<AEnemySpawn*> aClosestSpawns = GetClosestUnlockedEnemySpawns(3);
+
 	// Get the next unlocked spawn from the list
-	AEnemySpawn* pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
+	AEnemySpawn* pSpawn = aClosestSpawns[FMath::RandRange(0, aClosestSpawns.Num() - 1)];
 	while (pSpawn->m_bIsLocked) // Loop until you find an unlocked spawn
 	{
-		pSpawn = Cast<AEnemySpawn>(m_aSpawnLocations[FMath::RandRange(0, m_aSpawnLocations.Num() - 1)]);
+		pSpawn = aClosestSpawns[FMath::RandRange(0, aClosestSpawns.Num() - 1)];
 	}
 
 	// Spawn the enemy
@@ -209,13 +212,47 @@ TArray<AEnemy*> AEnemyManager::GetAllEnemiesInCombat()
 	return enemiesInCombat;
 }
 
+TArray<AEnemySpawn*> AEnemyManager::GetClosestUnlockedEnemySpawns(int a_iSpawnNum)
+{
+	// Create empty array to hold spawns
+	TArray<AEnemySpawn*> aUnlockedSpawns = TArray<AEnemySpawn*>();
+
+	// Iterate through each unlocked spawn
+	for (AActor* actor : m_aSpawnLocations)
+	{
+		// Cast actor to enemy spawn
+		AEnemySpawn* pSpawn = Cast<AEnemySpawn>(actor);
+		if (pSpawn) // Validate
+		{
+			// Add to array if unlocked
+			if (!pSpawn->m_bIsLocked)
+			{
+				aUnlockedSpawns.Add(pSpawn);
+			}
+		}
+	}
+
+	// Sort the spawns (sorting operators have been defined in the enemy spawn class)
+	aUnlockedSpawns.Sort();
+
+	// Create empty array for the return
+	TArray<AEnemySpawn*> aClosestSpawns = TArray<AEnemySpawn*>();
+
+	for (int i = 0; i < a_iSpawnNum; i++)
+	{
+		aClosestSpawns.Add(aUnlockedSpawns[i]);
+	}
+
+	return aClosestSpawns;
+}
+
 void AEnemyManager::ModifyWaveSpeeds()
 {
 	// Iterate through all enemies
-	for (int i = 0; i < m_aEnemies.Num(); i++)
+	for (AActor* actor : m_aEnemies)
 	{
 		// Cast to enemy
-		AEnemy* pEnemy = Cast<AEnemy>(m_aEnemies[i]);
+		AEnemy* pEnemy = Cast<AEnemy>(actor);
 
 		// Update speed
 		pEnemy->GetCharacterMovement()->MaxWalkSpeed = FMath::RandRange(m_fGlobalMinWalkSpeed, m_fGlobalMaxWalkSpeed);

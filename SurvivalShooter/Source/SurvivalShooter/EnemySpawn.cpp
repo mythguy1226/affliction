@@ -24,4 +24,3 @@ void AEnemySpawn::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-

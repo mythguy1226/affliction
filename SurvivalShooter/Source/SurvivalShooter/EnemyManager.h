@@ -8,6 +8,32 @@
 #include "EnemySpawn.h"
 #include "EnemyManager.generated.h"
 
+// Operator for verifying which enemy spawn is further away
+FORCEINLINE bool operator>(AEnemySpawn const& leftObj, AEnemySpawn const& rightObj)
+{
+	// Get the player
+	AController* pPlayerCont = UGameplayStatics::GetPlayerController(leftObj.GetWorld(), 0);
+
+	// Get distance to player for both objects
+	float thisDistance = FVector::Distance(pPlayerCont->GetPawn()->GetActorLocation(), leftObj.GetActorLocation());
+	float otherDistance = FVector::Distance(pPlayerCont->GetPawn()->GetActorLocation(), rightObj.GetActorLocation());
+
+	return thisDistance > otherDistance;
+}
+
+// Operator for verifying which enemy spawn is closest
+FORCEINLINE bool operator<(AEnemySpawn const& leftObj, AEnemySpawn const& rightObj)
+{
+	// Get the player
+	AController* pPlayerCont = UGameplayStatics::GetPlayerController(leftObj.GetWorld(), 0);
+
+	// Get distance to player for both objects
+	float thisDistance = FVector::Distance(pPlayerCont->GetPawn()->GetActorLocation(), leftObj.GetActorLocation());
+	float otherDistance = FVector::Distance(pPlayerCont->GetPawn()->GetActorLocation(), rightObj.GetActorLocation());
+
+	return thisDistance < otherDistance;
+}
+
 UCLASS()
 class SURVIVALSHOOTER_API AEnemyManager : public AActor
 {
@@ -55,6 +81,9 @@ public:
 
 	// Method for getting all enemies in combat
 	TArray<AEnemy*> GetAllEnemiesInCombat();
+
+	// Method for getting closest unlocked spawn points
+	TArray<AEnemySpawn*> GetClosestUnlockedEnemySpawns(int a_iSpawnNum);
 
 	// Method for modifying movement speeds for enemies
 	void ModifyWaveSpeeds();

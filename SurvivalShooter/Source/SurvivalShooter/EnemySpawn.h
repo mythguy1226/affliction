@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Kismet/GameplayStatics.h"
 #include "EnemySpawn.generated.h"
 
 UCLASS()
@@ -26,5 +27,4 @@ public:
 	// Boolean to track if spawn point is locked
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool m_bIsLocked = true;
-
 };
