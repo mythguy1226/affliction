@@ -38,19 +38,33 @@ void AInteractable::Tick(float DeltaTime)
 
 void AInteractable::OnCapsuleBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	// Cast to player and enable interact
-	ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(OtherActor);
-	pPlayer->m_bCanInteract = true;
+	// Null check the overlapping actor
+	if (OtherActor != nullptr)
+	{
+		// Cast to player and enable interact
+		ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(OtherActor);
+		if (pPlayer)
+		{
+			pPlayer->m_bCanInteract = true;
 
-	// Set proper interact values
-	pPlayer->m_sInteractMessage = m_sInteractMessage;
-	pPlayer->m_pInteractable = this;
+			// Set proper interact values
+			pPlayer->m_sInteractMessage = m_sInteractMessage;
+			pPlayer->m_pInteractable = this;
+		}
+	}
 }
 
 void AInteractable::OnCapsuleEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	// Cast to player and disable interact
-	ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(OtherActor);
-	pPlayer->m_bCanInteract = false;
+	// Null check the overlapping actor
+	if (OtherActor != nullptr)
+	{
+		// Cast to player and disable interact
+		ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(OtherActor);
+		if (pPlayer)
+		{
+			pPlayer->m_bCanInteract = false;
+		}
+	}
 }
 
