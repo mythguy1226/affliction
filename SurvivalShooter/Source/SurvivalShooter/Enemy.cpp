@@ -191,7 +191,14 @@ void AEnemy::HandleOnMontageEnded(UAnimMontage* Montage, bool Interrupted)
 		{
 			// Begin the next wave and update params
 			m_pEnemyManager->UpdateWaveParameters();
-			m_pEnemyManager->StartNextWave();
+
+			// Set a timer to start the next wave
+			FTimerHandle TimerHandle;
+			GetWorld()->GetTimerManager().SetTimer(TimerHandle, [&]()
+			{
+				// Spawn next wave of enemies
+				m_pEnemyManager->StartNextWave();
+			}, m_pEnemyManager->m_fTimeBetweenWaves, false);
 		}
 		else
 		{

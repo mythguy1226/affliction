@@ -64,6 +64,10 @@ public:
 	int m_iCurrentWaveSize;
 	int m_iWaveKills = 0;
 
+	// Timer to set between waves
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Management")
+	float m_fTimeBetweenWaves = 5.0f;
+
 	// Method for spawning the first wave
 	void SpawnFirstWave();
 
