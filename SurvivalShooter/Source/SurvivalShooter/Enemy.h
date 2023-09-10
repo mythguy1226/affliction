@@ -7,6 +7,13 @@
 #include "NiagaraFunctionLibrary.h"
 #include "Enemy.generated.h"
 
+
+UENUM(BlueprintType)
+enum class EDamageType : uint8 {
+	DT_Gun     UMETA(DisplayName = "Gun"),
+	DT_Sword      UMETA(DisplayName = "Sword")
+};
+
 class AEnemyManager;
 
 UCLASS()
@@ -65,7 +72,7 @@ public:
 	bool m_bInCombat = false;
 
 	// Method for handling damage
-	void TakeDamage(float a_fDamage);
+	void TakeDamage(float a_fDamage, EDamageType a_eType = EDamageType::DT_Gun);
 
 	// Method for handling enemy deaths/resets
 	void Reset();

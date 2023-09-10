@@ -115,7 +115,7 @@ void AEnemy::GenerateHitSphere(FVector a_vLocation, float a_fRadius, float a_fDa
 }
 
 // Method for taking damage
-void AEnemy::TakeDamage(float a_fDamage)
+void AEnemy::TakeDamage(float a_fDamage, EDamageType a_eType)
 {
 	// Return if the death montage is playing
 	if (GetMesh()->GetAnimInstance()->Montage_IsPlaying(m_pDeathMontage))
@@ -135,6 +135,18 @@ void AEnemy::TakeDamage(float a_fDamage)
 	// Death handling
 	if (m_fHealth <= 0)
 	{
+		// See if player is currently slashing
+		ASurvivalShooterCharacter* pPlayer = Cast<ASurvivalShooterCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+
+		// Declare kill points
+		int iPoints = 50;
+
+		if (a_eType == EDamageType::DT_Sword) // Double the points for the kill if slashing
+			iPoints *= 2;
+
+		// Add points for kill
+		Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += iPoints;
+
 		Die();
 	}
 }
@@ -150,9 +162,6 @@ void AEnemy::Reset()
 // Method for killing enemy
 void AEnemy::Die()
 {
-	// Add points for kill
-	Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()))->m_iPoints += 50;
-
 	// If sounds exist then play them
 	if (m_pDeathSounds.Num() > 0)
 	{

@@ -140,6 +140,9 @@ public:
 	// Method for firing melee attack
 	void MeleeAttack();
 
+	// Method for generating hit spheres
+	void GenerateHitSphere(FVector a_vLocation, float a_fRadius, float a_fDamage, bool a_bDebug = false);
+
 	// Boolean for tracking PrimaryAction hold
 	bool m_bHoldingPrimaryAction = false;
 	float m_fShotTimer = 0.0f;
@@ -202,6 +205,9 @@ protected:
 public:
 	UFUNCTION()
 	void HandleOnMontageEnded(UAnimMontage* Montage, bool Interrupted);
+
+	UFUNCTION()
+	void HandleOnMontageNotifyBegin(FName a_nNotifyName, const FBranchingPointNotifyPayload& a_pBranchingPayload);
 
 	/** Returns Mesh1P subobject **/
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }

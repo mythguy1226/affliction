@@ -50,6 +50,7 @@ void ASurvivalShooterCharacter::BeginPlay()
 
 	// Bind Events
 	GetMesh1P()->GetAnimInstance()->OnMontageEnded.AddDynamic(this, &ASurvivalShooterCharacter::HandleOnMontageEnded);
+	GetMesh1P()->GetAnimInstance()->OnPlayMontageNotifyBegin.AddDynamic(this, &ASurvivalShooterCharacter::HandleOnMontageNotifyBegin);
 
 	// Equip the Pistol upon starting
 	if (m_cPistol != nullptr)
@@ -412,6 +413,58 @@ void ASurvivalShooterCharacter::MeleeAttack()
 	pMesh->SetVisibility(true);
 }
 
+void ASurvivalShooterCharacter::GenerateHitSphere(FVector a_vLocation, float a_fRadius, float a_fDamage, bool a_bDebug)
+{
+	// Init hit results
+	TArray<FHitResult> outHits;
+	TArray<AActor*> ignoredActors;
+	ignoredActors.Add(this);
+
+	// Use Sphere Shape
+	FCollisionShape sphereShape;
+	sphereShape.ShapeType = ECollisionShape::Sphere;
+	sphereShape.SetSphere(a_fRadius);
+
+	// Set the query params
+	FCollisionQueryParams queryParams;
+	queryParams.AddIgnoredActor(this);
+
+	// Sweep Trace at typical contact point of swing
+	GetWorld()->SweepMultiByChannel(outHits, a_vLocation, a_vLocation, FQuat::Identity, ECollisionChannel::ECC_Pawn, sphereShape, queryParams);
+
+	// Debug Trace to show visual representation
+	if (a_bDebug)
+	{
+		// Sweep Trace at typical contact point of swing with debugging visuals
+		UKismetSystemLibrary::SphereTraceMulti(GetWorld(), a_vLocation, a_vLocation,
+			a_fRadius,
+			UEngineTypes::ConvertToTraceType(ECollisionChannel::ECC_Pawn), true, ignoredActors,
+			EDrawDebugTrace::ForDuration, outHits, true, FColor::Red);
+	}
+
+	// Check that a collision happened
+	if (outHits.Num() > 0)
+	{
+		// Iterate through the hit results
+		for (auto i = outHits.CreateIterator(); i; i++)
+		{
+			// Try to cast to the player
+			AEnemy* pEnemy = Cast<AEnemy>(i->GetActor());
+			if (pEnemy) // Continue if valid
+			{
+				// Deal damage
+				pEnemy->TakeDamage(a_fDamage, EDamageType::DT_Sword);
+
+				// Add points
+				UGlobalManager* pMngr = Cast<UGlobalManager>(UGameplayStatics::GetGameInstance(GetWorld()));
+				pMngr->m_iPoints += 10;
+
+				break;
+			}
+		}
+	}
+}
+
 //////////////////////////////////////////////////////////////////////////// Input
 
 void ASurvivalShooterCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -611,9 +664,23 @@ void ASurvivalShooterCharacter::HandleOnMontageEnded(UAnimMontage* Montage, bool
 			m_pEquippedWeapon->m_iTotalAmmo = 0;
 		}
 	}
+}
+
+void ASurvivalShooterCharacter::HandleOnMontageNotifyBegin(FName a_nNotifyName, const FBranchingPointNotifyPayload& a_pBranchingPayload)
+{
+	// Check slash attack collisions
+	if (a_nNotifyName.ToString() == "CheckAttackCollisions")
+	{
+		// Sphere Location
+		FVector vOffset = (GetActorForwardVector() * 80.0f) + FVector(0.0f, 0.0f, 25.0f);
+		FVector pLocation = GetActorLocation() + vOffset;
+
+		// Generate a hit sphere at the hit location
+		GenerateHitSphere(pLocation, 30.0f, 20.0f);
+	}
 
 	// Re-enable equipped weapon visibility
-	if (Montage->GetName().Contains("sword"))
+	if (a_nNotifyName.ToString() == "SlashEnd")
 	{
 		// Show the currently equipped weapon
 		m_pEquippedWeapon->GetMesh()->SetVisibility(true);
