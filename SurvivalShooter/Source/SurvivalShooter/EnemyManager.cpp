@@ -52,26 +52,13 @@ void AEnemyManager::SpawnFirstWave()
 	// Ensure that there are enemies in the list
 	if (m_aEnemies.Num() > 0)
 	{
-		// Init spawn count for this wave
-		int spawnCount = 0;
-
-		// Iterate through all enemies
-		for (int i = 0; i < m_aEnemies.Num(); i++)
+		// Spawn by initial wave size
+		for (int i = 0; i < m_iFirstWaveCount; i++)
 		{
-			// Break the loop if target enemies has been reached
-			if (spawnCount == m_iFirstWaveCount)
-			{
-				break;
-			}
-
-			// Cast actor to enemy
-			AEnemy* curEnemy = Cast<AEnemy>(m_aEnemies[i]);
-
-			// Spawn the enemy
-			SpawnEnemy(curEnemy);
-
-			// Update spawn count
-			spawnCount++;
+			// Spawn next available enemy
+			AEnemy* pEnemy = GetNextAvailableEnemy();
+			if (pEnemy != nullptr)
+				SpawnEnemy(pEnemy);
 		}
 	}
 }
@@ -109,31 +96,24 @@ void AEnemyManager::UpdateWaveParameters()
 
 void AEnemyManager::StartNextWave()
 {
-	// Init spawn count for this wave
-	int spawnCount = 0;
+	// Get number of enemies per batch
+	int iEnemiesPerBatch = m_iCurrentWaveSize / 4; // 4 Batches
+	int iLeftOverEnemies = m_iCurrentWaveSize - (iEnemiesPerBatch * 4);
 
-	// Iterate through all enemies
-	for (int i = 0; i < m_aEnemies.Num(); i++)
+	// Spawn each batch with a delay in between
+	GetWorld()->GetTimerManager().SetTimer(TimerHandleLoop, [&]()
 	{
-		// Break the loop if target enemies has been reached or if full wave has been spawned
-		if (spawnCount == m_iMaxEnemiesInArena || spawnCount == m_iCurrentWaveSize)
-		{
-			break;
-		}
+		BatchSpawnEnemies(iEnemiesPerBatch);
+	}, 2, true);
 
-		// Cast actor to enemy
-		AEnemy* curEnemy = Cast<AEnemy>(m_aEnemies[i]);
+	// Clear the timer once 4 batches spawned
+	GetWorld()->GetTimerManager().SetTimer(TimerHandleClear, [&]()
+	{
+		// Also spawn any left over enemies
+		BatchSpawnEnemies(iLeftOverEnemies);
 
-		// Ensure enemy isn't already in combat
-		if (!curEnemy->m_bInCombat)
-		{
-			// Spawn the enemy
-			SpawnEnemy(curEnemy);
-
-			// Update spawn count
-			spawnCount++;
-		}
-	}
+		GetWorld()->GetTimerManager().ClearTimer(TimerHandleLoop);
+	}, 8, false);
 
 	// Update Wave Speeds and Health
 	ModifyWaveSpeeds();
@@ -151,22 +131,28 @@ void AEnemyManager::SpawnMoreEnemies()
 			// Check that arena isn't full
 			if (GetAllEnemiesInCombat().Num() < m_iMaxEnemiesInArena)
 			{
-				// Iterate through all enemies
-				for (int i = 0; i < m_aEnemies.Num(); i++)
-				{
-					// Cast actor to enemy
-					AEnemy* curEnemy = Cast<AEnemy>(m_aEnemies[i]);
-
-					// Check that enemy isn't already in combat
-					if (!curEnemy->m_bInCombat)
-					{
-						// Spawn the enemy
-						SpawnEnemy(curEnemy);
-						break;
-					}
-				}
+				// Spawn an enemy
+				AEnemy* pEnemy = GetNextAvailableEnemy();
+				if(pEnemy != nullptr)
+					SpawnEnemy(pEnemy);
 			}
 		}
+	}
+}
+
+void AEnemyManager::BatchSpawnEnemies(int a_iEnemyNum)
+{
+	// Spawn by amount of wave size
+	for (int i = 0; i < a_iEnemyNum; i++)
+	{
+		// Ensure the spawn count doesnt exceed the arena
+		if (i == m_iMaxEnemiesInArena)
+			break;
+
+		// Spawn next available enemy
+		AEnemy* pEnemy = GetNextAvailableEnemy();
+		if (pEnemy != nullptr)
+			SpawnEnemy(pEnemy);
 	}
 }
 
@@ -244,6 +230,25 @@ TArray<AEnemySpawn*> AEnemyManager::GetClosestUnlockedEnemySpawns(int a_iSpawnNu
 	}
 
 	return aClosestSpawns;
+}
+
+AEnemy* AEnemyManager::GetNextAvailableEnemy()
+{
+	// Iterate through until you find an enemy not in combat
+	AEnemy* pEnemy = nullptr;
+	size_t iter = 0;
+	while (pEnemy == nullptr || iter != m_aEnemies.Num() - 1)
+	{
+		// Cast to an enemy and check combat status
+		if (!Cast<AEnemy>(m_aEnemies[iter])->m_bInCombat)
+		{
+			pEnemy = Cast<AEnemy>(m_aEnemies[iter]);
+			return pEnemy;
+		}
+		iter++;
+	}
+
+	return nullptr;
 }
 
 void AEnemyManager::ModifyWaveSpeeds()

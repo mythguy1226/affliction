@@ -83,11 +83,17 @@ public:
 	// Method for spawning more enemies for wave
 	void SpawnMoreEnemies();
 
+	// Method for spawning enemies in batches
+	void BatchSpawnEnemies(int a_iEnemyNum);
+
 	// Method for getting all enemies in combat
 	TArray<AEnemy*> GetAllEnemiesInCombat();
 
 	// Method for getting closest unlocked spawn points
 	TArray<AEnemySpawn*> GetClosestUnlockedEnemySpawns(int a_iSpawnNum);
+
+	// Method for getting the next available enemy
+	AEnemy* GetNextAvailableEnemy();
 
 	// Method for modifying movement speeds for enemies
 	void ModifyWaveSpeeds();
@@ -109,6 +115,10 @@ private:
 
 	// Health for enemies in wave
 	float m_fWaveHealth = 30.0f;
+
+	// Timer Handles
+	FTimerHandle TimerHandleLoop;
+	FTimerHandle TimerHandleClear;
 
 public:
 	// Called every frame
