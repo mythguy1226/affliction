@@ -64,6 +64,34 @@ void ASurvivalShooterCharacter::BeginPlay()
 		UUserWidget* HUD = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), m_cPlayerHUD);
 		HUD->AddToViewport(9999);
 	}
+
+	// Equip the sword upon starting and then hide it
+	if (m_cSword != nullptr)
+	{
+		// Get the spawning params and values for spawning the pistol
+		APlayerController* PlayerController = Cast<APlayerController>(GetController());
+		const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+		const FVector SpawnLocation = GetOwner()->GetActorLocation();
+
+		//Set Spawn Collision Handling Override
+		FActorSpawnParameters ActorSpawnParams;
+		ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+		// Spawn the weapon into the world
+		AActor* pSword = GetWorld()->SpawnActor<AActor>(m_cSword, SpawnLocation, SpawnRotation, ActorSpawnParams);
+
+		// Attach the sword and hide it
+		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
+		pSword->AttachToComponent(GetMesh1P(), AttachmentRules, FName(TEXT("SwordSocket")));
+
+		TArray<UStaticMeshComponent*> pComponents;
+		pSword->GetComponents<UStaticMeshComponent>(pComponents);
+		UStaticMeshComponent* pMesh = pComponents[0];
+		pMesh->SetVisibility(false);
+
+		// Set the sword
+		m_pSword = pSword;
+	}
 }
 
 void ASurvivalShooterCharacter::Tick(float m_fDeltaTime)
@@ -357,6 +385,33 @@ void ASurvivalShooterCharacter::Interact()
 
 }
 
+void ASurvivalShooterCharacter::MeleeAttack()
+{
+	// Get anim instance
+	UAnimInstance* pAnimInst = GetMesh1P()->GetAnimInstance();
+
+	// Null check
+	if (pAnimInst == nullptr)
+		return;
+
+	// Cancel if already slashing
+	if (pAnimInst->Montage_IsPlaying(m_pSwordSlashMontage))
+		return;
+	
+	// Play attack montage
+	if (m_pSwordSlashMontage != nullptr)
+		pAnimInst->Montage_Play(m_pSwordSlashMontage);
+
+	// Hide the currently equipped weapon
+	m_pEquippedWeapon->GetMesh()->SetVisibility(false);
+
+	// Show the sword
+	TArray<UStaticMeshComponent*> pComponents;
+	m_pSword->GetComponents<UStaticMeshComponent>(pComponents);
+	UStaticMeshComponent* pMesh = pComponents[0];
+	pMesh->SetVisibility(true);
+}
+
 //////////////////////////////////////////////////////////////////////////// Input
 
 void ASurvivalShooterCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -380,6 +435,9 @@ void ASurvivalShooterCharacter::SetupPlayerInputComponent(class UInputComponent*
 	// Bind fire events
 	PlayerInputComponent->BindAction("PrimaryAction", IE_Pressed, this, &ASurvivalShooterCharacter::OnPrimaryAction);
 	PlayerInputComponent->BindAction("PrimaryAction", IE_Released, this, &ASurvivalShooterCharacter::OnReleasePrimaryAction);
+
+	// Bind melee event
+	PlayerInputComponent->BindAction("SecondaryAction", IE_Pressed, this, &ASurvivalShooterCharacter::MeleeAttack);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
@@ -552,5 +610,18 @@ void ASurvivalShooterCharacter::HandleOnMontageEnded(UAnimMontage* Montage, bool
 
 			m_pEquippedWeapon->m_iTotalAmmo = 0;
 		}
+	}
+
+	// Re-enable equipped weapon visibility
+	if (Montage->GetName().Contains("sword"))
+	{
+		// Show the currently equipped weapon
+		m_pEquippedWeapon->GetMesh()->SetVisibility(true);
+
+		// Hide the sword
+		TArray<UStaticMeshComponent*> pComponents;
+		m_pSword->GetComponents<UStaticMeshComponent>(pComponents);
+		UStaticMeshComponent* pMesh = pComponents[0];
+		pMesh->SetVisibility(false);
 	}
 }

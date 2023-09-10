@@ -44,6 +44,10 @@ class ASurvivalShooterCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class AActor> m_cShotgun;
 
+	/* Sword Class to Spawn*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class AActor> m_cSword;
+
 	/* Get the blueprint widget to assign to the player viewport */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class UUserWidget> m_cPlayerHUD;
@@ -72,6 +76,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	AWeapon* m_pOffHandWeapon;
 
+	/* Reference to sword actor */
+	AActor* m_pSword;
+
 	/* Gets the montage used for reloading */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 	UAnimMontage* m_pReloadMontage;
@@ -87,6 +94,10 @@ public:
 	UAnimMontage* m_pRifleShootMontage;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 	UAnimMontage* m_pShotgunShootMontage;
+
+	/** AnimMontage to play when using melee attack */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
+	UAnimMontage* m_pSwordSlashMontage;
 
 	/* Gets the sound used for swapping weapons */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound")
@@ -125,6 +136,9 @@ public:
 
 	// Method for handling interactions
 	void Interact();
+
+	// Method for firing melee attack
+	void MeleeAttack();
 
 	// Boolean for tracking PrimaryAction hold
 	bool m_bHoldingPrimaryAction = false;
