@@ -22,15 +22,19 @@ EBTNodeResult::Type UBTT_MeleeAttack::ExecuteTask(UBehaviorTreeComponent& a_pOwn
 	AEnemy_Controller* const controller = Cast<AEnemy_Controller>(a_pOwnerComp.GetAIOwner());
 	AEnemy* const enemy = Cast<AEnemy>(controller->GetPawn());
 
-	// Check if montage has finished
-	if (AttackMontageFinished(enemy))
+	// Make sure enemy isnt dead
+	if (enemy->m_fHealth > 0)
 	{
-		// Check that enemy is in range to attack
-		bool canAttack = controller->get_blackboard()->GetValueAsBool(bb_keys::player_in_melee_range);
-		if (canAttack)
+		// Check if montage has finished
+		if (AttackMontageFinished(enemy))
 		{
-			// Run enemy attack method
-			enemy->MeleeAttack();
+			// Check that enemy is in range to attack
+			bool canAttack = controller->get_blackboard()->GetValueAsBool(bb_keys::player_in_melee_range);
+			if (canAttack)
+			{
+				// Run enemy attack method
+				enemy->MeleeAttack();
+			}
 		}
 	}
 
