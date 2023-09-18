@@ -69,29 +69,7 @@ void ASurvivalShooterCharacter::BeginPlay()
 	// Equip the sword upon starting and then hide it
 	if (m_cSword != nullptr)
 	{
-		// Get the spawning params and values for spawning the pistol
-		APlayerController* PlayerController = Cast<APlayerController>(GetController());
-		const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-		const FVector SpawnLocation = GetOwner()->GetActorLocation();
-
-		//Set Spawn Collision Handling Override
-		FActorSpawnParameters ActorSpawnParams;
-		ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-
-		// Spawn the weapon into the world
-		AActor* pSword = GetWorld()->SpawnActor<AActor>(m_cSword, SpawnLocation, SpawnRotation, ActorSpawnParams);
-
-		// Attach the sword and hide it
-		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
-		pSword->AttachToComponent(GetMesh1P(), AttachmentRules, FName(TEXT("SwordSocket")));
-
-		TArray<UStaticMeshComponent*> pComponents;
-		pSword->GetComponents<UStaticMeshComponent>(pComponents);
-		UStaticMeshComponent* pMesh = pComponents[0];
-		pMesh->SetVisibility(false);
-
-		// Set the sword
-		m_pSword = pSword;
+		EquipSword();
 	}
 }
 
@@ -257,6 +235,67 @@ void ASurvivalShooterCharacter::BuyWeapon(FString a_sWeapon)
 	}
 }
 
+void ASurvivalShooterCharacter::EquipSword()
+{
+	// Get the spawning params and values for spawning the pistol
+	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+	const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+	const FVector SpawnLocation = GetOwner()->GetActorLocation();
+
+	//Set Spawn Collision Handling Override
+	FActorSpawnParameters ActorSpawnParams;
+	ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+	// Spawn the weapon into the world
+	AActor* pSword = GetWorld()->SpawnActor<AActor>(m_cSword, SpawnLocation, SpawnRotation, ActorSpawnParams);
+
+	// Attach the sword and hide it
+	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
+	pSword->AttachToComponent(GetMesh1P(), AttachmentRules, FName(TEXT("SwordSocket")));
+
+	TArray<UStaticMeshComponent*> pComponents;
+	pSword->GetComponents<UStaticMeshComponent>(pComponents);
+	UStaticMeshComponent* pMesh = pComponents[0];
+	pMesh->SetVisibility(false);
+
+	// Set the sword
+	m_pSword = pSword;
+}
+
+void ASurvivalShooterCharacter::UpgradeSword()
+{
+	// Destroy weapon being switched out
+	m_pSword->Destroy();
+	m_pSword = nullptr;
+
+	// Get the spawning params and values for spawning the pistol
+	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+	const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+	const FVector SpawnLocation = GetOwner()->GetActorLocation();
+
+	//Set Spawn Collision Handling Override
+	FActorSpawnParameters ActorSpawnParams;
+	ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+	// Spawn the weapon into the world
+	AActor* pSword = GetWorld()->SpawnActor<AActor>(m_cUpgradedSword, SpawnLocation, SpawnRotation, ActorSpawnParams);
+
+	// Attach the sword and hide it
+	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
+	pSword->AttachToComponent(GetMesh1P(), AttachmentRules, FName(TEXT("UpgradedSwordSocket")));
+
+	TArray<UStaticMeshComponent*> pComponents;
+	pSword->GetComponents<UStaticMeshComponent>(pComponents);
+	UStaticMeshComponent* pMesh = pComponents[0];
+	pMesh->SetVisibility(false);
+
+	// Set the sword
+	m_pSword = pSword;
+
+	// Set upgraded boolean to true
+	m_bSwordIsUpgraded = true;
+}
+
 void ASurvivalShooterCharacter::TakeDamage(float a_fDamage)
 {
 	// Take damage
@@ -382,6 +421,10 @@ void ASurvivalShooterCharacter::Interact()
 		{
 			BuyWeapon("Shotgun");
 		}
+		if (m_pInteractable->GetName().Contains("SwordUpgrade"))
+		{
+			UpgradeSword();
+		}
 	}
 
 }
@@ -396,12 +439,14 @@ void ASurvivalShooterCharacter::MeleeAttack()
 		return;
 
 	// Cancel if already slashing
-	if (pAnimInst->Montage_IsPlaying(m_pSwordSlashMontage))
+	if (pAnimInst->Montage_IsPlaying(m_pSwordSlashMontage) || pAnimInst->Montage_IsPlaying(m_pUpgradedSwordSlashMontage))
 		return;
 	
 	// Play attack montage
-	if (m_pSwordSlashMontage != nullptr)
+	if (m_pSwordSlashMontage != nullptr && !m_bSwordIsUpgraded)
 		pAnimInst->Montage_Play(m_pSwordSlashMontage);
+	if (m_pUpgradedSwordSlashMontage != nullptr && m_bSwordIsUpgraded)
+		pAnimInst->Montage_Play(m_pUpgradedSwordSlashMontage);
 
 	// Hide the currently equipped weapon
 	m_pEquippedWeapon->GetMesh()->SetVisibility(false);

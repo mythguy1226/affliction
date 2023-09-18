@@ -48,6 +48,10 @@ class ASurvivalShooterCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class AActor> m_cSword;
 
+	/* Upgraded Sword Class to Spawn*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class AActor> m_cUpgradedSword;
+
 	/* Get the blueprint widget to assign to the player viewport */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class UUserWidget> m_cPlayerHUD;
@@ -98,6 +102,8 @@ public:
 	/** AnimMontage to play when using melee attack */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 	UAnimMontage* m_pSwordSlashMontage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
+	UAnimMontage* m_pUpgradedSwordSlashMontage;
 
 	/* Gets the sound used for swapping weapons */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound")
@@ -119,6 +125,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString m_sInteractMessage = "";
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool m_bSwordIsUpgraded = false;
+
 	// Method for equipping a weapon
 	void EquipWeapon(FString a_sWeapon = "Pistol");
 
@@ -127,6 +136,12 @@ public:
 
 	// Method for buying weapons
 	void BuyWeapon(FString a_sWeapon);
+
+	// Method for equipping the sword
+	void EquipSword();
+
+	// Method for upgrading the sword
+	void UpgradeSword();
 
 	// Method for handling damage
 	void TakeDamage(float a_fDamage);
